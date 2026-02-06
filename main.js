@@ -77,44 +77,53 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 4.5 Time-Sliced Catalog Logic
+    // 4.5 Focus-Stack Catalog Logic (Readability Correction)
     const slices = document.querySelectorAll('.slice');
     const slicesContainer = document.querySelector('.slices-container');
 
-    const sliceTL = gsap.timeline({
-        scrollTrigger: {
-            trigger: slicesContainer,
-            start: "top center",
-            end: "bottom bottom",
-            scrub: 1,
-            pin: true,
-            anticipatePin: 1
-        }
-    });
+    if (slicesContainer && slices.length > 0) {
+        const sliceTL = gsap.timeline({
+            scrollTrigger: {
+                trigger: slicesContainer,
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+                pin: true,
+                snap: {
+                    snapTo: 1 / (slices.length - 1),
+                    duration: { min: 0.4, max: 0.8 },
+                    delay: 0.1,
+                    ease: "power2.inOut"
+                },
+                anticipatePin: 1
+            }
+        });
 
-    slices.forEach((slice, i) => {
-        const isOdd = i % 2 !== 0;
-        const xOffset = isOdd ? 150 : -150;
+        slices.forEach((slice, i) => {
+            // Initial state
+            gsap.set(slice, { opacity: 0, y: 100, scale: 0.8 });
 
-        // Initial state
-        gsap.set(slice, { opacity: 0, z: -500, rotateX: isOdd ? 45 : -45 });
-
-        // Animation in the timeline
-        sliceTL.to(slice, {
-            opacity: 1,
-            z: 0,
-            rotateX: 0,
-            duration: 1,
-            ease: "power2.out"
-        }, i * 0.8)
-            .to(slice, {
-                opacity: 0,
-                z: 500,
-                rotateX: isOdd ? -45 : 45,
+            // Entrance
+            sliceTL.to(slice, {
+                opacity: 1,
+                y: 0,
+                scale: 1,
                 duration: 1,
-                ease: "power2.in"
-            }, (i + 0.5) * 0.8);
-    });
+                ease: "power3.out"
+            }, i * 2);
+
+            // Exit (if not last)
+            if (i < slices.length - 1) {
+                sliceTL.to(slice, {
+                    opacity: 0,
+                    y: -100,
+                    scale: 1.1,
+                    duration: 1,
+                    ease: "power3.in"
+                }, (i * 2) + 1.2);
+            }
+        });
+    }
 
     // 5. Liquid Depth Logic (Skew on scroll)
     const layers = document.querySelectorAll('.liquid-layer');
