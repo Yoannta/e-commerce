@@ -924,3 +924,205 @@ nav a:hover {
         flex-direction: column;
     }
 }
+/* Student Hub Dashboard */
+.dashboard-shell {
+    display: grid;
+    grid-template-columns: minmax(240px, 280px) 1fr;
+    gap: 2rem;
+}
+
+.dash-sidebar {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: sticky;
+    top: 2rem;
+    height: fit-content;
+}
+
+.dash-profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.avatar-ring {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    padding: 3px;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.6), rgba(15, 23, 42, 0.1));
+}
+
+.avatar-ring img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-meta span {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.dash-nav {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.dash-tab {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--glass-border);
+    color: var(--text-main);
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    transition: border-color 0.3s, transform 0.3s;
+}
+
+.dash-tab.is-active,
+.dash-tab:hover {
+    border-color: rgba(249, 115, 22, 0.5);
+    transform: translateY(-2px);
+}
+
+.dash-cta {
+    padding: 1.5rem;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.dash-cta .btn-primary {
+    width: fit-content;
+}
+
+.dash-main {
+    display: grid;
+    gap: 2rem;
+}
+
+.dash-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+}
+
+.dash-card {
+    position: relative;
+    padding: 2rem;
+    border-radius: 24px;
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.dash-card .card-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(249, 115, 22, 0.12), transparent 45%);
+    opacity: 0;
+    transition: opacity 0.4s;
+    pointer-events: none;
+}
+
+.dash-card:hover .card-glow {
+    opacity: 1;
+}
+
+.progress-visual {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.progress-visual svg {
+    width: 120px;
+    height: 120px;
+    transform: rotate(-90deg);
+}
+
+.progress-bg {
+    fill: none;
+    stroke: rgba(148, 163, 184, 0.2);
+    stroke-width: 10;
+}
+
+.progress-value {
+    fill: none;
+    stroke: var(--primary);
+    stroke-width: 10;
+    stroke-linecap: round;
+    stroke-dasharray: 302;
+    stroke-dashoffset: 96;
+}
+
+.progress-value-text strong {
+    font-size: 1.5rem;
+}
+
+.progress-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 1rem;
+}
+
+.dash-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.task-list {
+    list-style: none;
+    margin-top: 1.5rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.task-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--glass-border);
+    color: var(--text-muted);
+}
+
+.task-list strong {
+    color: var(--secondary);
+}
+
+.insight {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.insight strong {
+    color: var(--text-main);
+}
+
+@media (max-width: 968px) {
+    .dashboard-shell {
+        grid-template-columns: 1fr;
+    }
+
+    .dash-sidebar {
+        position: static;
+    }
+
+    .dash-row {
+        grid-template-columns: 1fr;
+    }
+}
