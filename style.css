@@ -210,6 +210,104 @@ nav a:hover {
     background: var(--glass);
 }
 
+/* Nexus Gate Visuals (Restored) */
+.nexus-wrapper {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.nexus-ring {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    width: 600px;
+    height: 600px;
+}
+
+.nexus-ring svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 30px rgba(249, 115, 22, 0.4));
+}
+
+#nexus-path {
+    fill: none;
+    stroke: var(--primary);
+    stroke-width: 1.5;
+    stroke-dasharray: 5, 5;
+    opacity: 0.6;
+}
+
+.nexus-glow {
+    position: absolute;
+    inset: 20%;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(40px);
+    animation: nexus-pulse 4s ease-in-out infinite;
+}
+
+@keyframes nexus-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+.fragment {
+    position: absolute;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    white-space: nowrap;
+    z-index: 5;
+    will-change: transform;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3), inset 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.frag-info span {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.frag-info strong {
+    font-size: 1rem;
+    color: var(--text-main);
+}
+
+.frag-1 {
+    top: 20%;
+    right: 15%;
+}
+
+.frag-2 {
+    top: 50%;
+    right: 25%;
+}
+
+.frag-3 {
+    bottom: 20%;
+    right: 10%;
+}
+
+.hero-visual {
+    opacity: 0.4;
+}
+
 /* Hero background stabilization */
 .hero-bg-glow {
     position: absolute;
