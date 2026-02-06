@@ -4,13 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcomMastery | Elite E-commerce Training</title>
+    <title>L'ÉCOLE DU E-COMMERCE | Vision & Excellence</title>
     <meta name="description"
-        content="Master the art of e-commerce with our premium, expert-led training programs. Scale your business to 7 figures.">
+        content="Centre de formation d'élite au e-commerce. Forgez votre avenir avec une approche cinématique et des résultats concrets.">
+    <!-- Fonts: Cinematic Signature (Fraunces + Manrope) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Manrope:wght@200..800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <!-- Smooth Scroll & Animation Libraries -->
+    <script src="https://unpkg.com/lenis@1.1.2/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 
 <body>
@@ -33,7 +40,7 @@
     </header>
 
     <main>
-        <section class="hero">
+        <section class="hero liquid-layer">
             <div class="container grid">
                 <div class="hero-content">
                     <span class="badge">Elite Training 2026</span>
@@ -46,12 +53,12 @@
                     </div>
                     <div class="hero-stats">
                         <div class="stat-item">
-                            <span class="stat-num">15k+</span>
-                            <span class="stat-label">Students</span>
+                            <span class="stat-num">50+</span>
+                            <span class="stat-label">Apprenants</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-num">$2B+</span>
-                            <span class="stat-label">Revenue Generated</span>
+                            <span class="stat-num">2025</span>
+                            <span class="stat-label">Année de Fondation</span>
                         </div>
                     </div>
                 </div>
@@ -94,104 +101,126 @@
             <div class="hero-bg-glow"></div>
         </section>
 
-        <section id="courses" class="courses section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Master Every <span class="gradient-text">Skillset</span></h2>
-                    <p>Designed for every stage of your journey, from beginner to enterprise.</p>
+        <section id="about" class="about section liquid-layer">
+            <div class="container grid">
+                <div class="about-image">
+                    <div class="glass-card founder-card">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80"
+                            alt="M. Rodrigue GUEDEU">
+                        <div class="founder-info">
+                            <h3>M. Rodrigue GUEDEU</h3>
+                            <p>Fondateur & Expert E-commerce</p>
+                            <span class="badge-mini">BAC +3 Marketing Digital</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="course-grid">
-                    <!-- Course cards will be styled here -->
-                    <div class="course-card">
-                        <div class="card-image bg-1"></div>
-                        <div class="card-body">
-                            <span class="tag">Foundation</span>
-                            <h3>Ecom Foundations 2.0</h3>
-                            <p>Build your first store from scratch in 30 days.</p>
-                            <div class="card-meta">
-                                <span>12 Modules</span>
-                                <span>$297</span>
-                            </div>
-                        </div>
+                <div class="about-content">
+                    <span class="badge">Notre Histoire</span>
+                    <h2>À Propos de <span class="gradient-text">L'ÉCOLE DU E-COMMERCE</span></h2>
+                    <p>Fondée le <strong>18 octobre 2025</strong>, notre institution est dédiée aux métiers du business
+                        en ligne. Notre mission est claire : former, structurer et accompagner ceux qui souhaitent
+                        réussir de manière professionnelle, éthique et durable.</p>
+                    <p>Sous la direction de <strong>M. Rodrigue GUEDEU</strong>, fort de 5 années d'expérience terrain
+                        chez Nowooh, nous privilégions une approche pratique et concrète, orientée vers des résultats
+                        réels en Afrique.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="vision-mission section bg-alt liquid-layer">
+            <div class="container">
+                <div class="grid">
+                    <div class="vision-card glass-card p-4">
+                        <h3>Notre <span class="gradient-text">Vision</span></h3>
+                        <p>Rendre l'e-commerce accessible, compréhensible et rentable pour les entrepreneurs africains,
+                            en tenant compte des réalités locales et des opportunités internationales.</p>
                     </div>
-                    <div class="course-card featured">
-                        <div class="card-image bg-2"></div>
-                        <div class="card-body">
-                            <span class="tag">Scaling</span>
-                            <h3>The Scaling Blueprint</h3>
-                            <p>Advanced Facebook and TikTok Ads strategies for $10k+ days.</p>
-                            <div class="card-meta">
-                                <span>24 Modules</span>
-                                <span>$997</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="course-card">
-                        <div class="card-image bg-3"></div>
-                        <div class="card-body">
-                            <span class="tag">Dropshipping</span>
-                            <h3>Sourcing Mastery</h3>
-                            <p>Private agent networking and supply chain optimization.</p>
-                            <div class="card-meta">
-                                <span>8 Modules</span>
-                                <span>$497</span>
-                            </div>
-                        </div>
+                    <div class="mission-card glass-card p-4">
+                        <h3>Notre <span class="gradient-text">Mission</span></h3>
+                        <ul class="feature-list">
+                            <li>Transmettre des compétences réelles</li>
+                            <li>Accompagner de l'apprentissage à la pratique</li>
+                            <li>Bâtir des projets structurés et viables</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="mentors" class="mentors section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Master Every <span class="gradient-text">Skillset</span></h2>
+                <p>Designed for every stage of your journey, from beginner to enterprise.</p>
+            </div>
+            <div class="course-grid">
+                <!-- Course cards will be styled here -->
+                <div class="course-card">
+                    <div class="card-image bg-1"></div>
+                    <div class="card-body">
+                        <span class="tag">Foundation</span>
+                        <h3>Ecom Foundations 2.0</h3>
+                        <p>Build your first store from scratch in 30 days.</p>
+                        <div class="card-meta">
+                            <span>12 Modules</span>
+                            <span>$297</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-card featured">
+                    <div class="card-image bg-2"></div>
+                    <div class="card-body">
+                        <span class="tag">Scaling</span>
+                        <h3>The Scaling Blueprint</h3>
+                        <p>Advanced Facebook and TikTok Ads strategies for $10k+ days.</p>
+                        <div class="card-meta">
+                            <span>24 Modules</span>
+                            <span>$997</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="card-image bg-3"></div>
+                    <div class="card-body">
+                        <span class="tag">Dropshipping</span>
+                        <h3>Sourcing Mastery</h3>
+                        <p>Private agent networking and supply chain optimization.</p>
+                        <div class="card-meta">
+                            <span>8 Modules</span>
+                            <span>$497</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+        <section id="mentors" class="mentors section liquid-layer">
             <div class="container">
                 <div class="section-header">
-                    <h2>Meet Your <span class="gradient-text">Mentors</span></h2>
-                    <p>Learn directly from industry giants who have built and scaled multi-million dollar brands.</p>
+                    <h2>Notre <span class="gradient-text">Impact</span> depuis 2025</h2>
+                    <p>Plus de 50 apprenants formés et accompagnés. Plusieurs projets concrets lancés directement depuis
+                        l'Afrique.</p>
                 </div>
                 <div class="mentor-grid">
+                    <!-- Impact cards or updated mentor profiles -->
                     <div class="mentor-card glass-card">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80"
-                            alt="Yomi Denzel">
-                        <div class="mentor-info">
-                            <h3>Yomi Denzel</h3>
-                            <p class="role">Ecom Giant & Strategist</p>
-                            <p class="bio">Pioneer of the French dropshipping scene, generated over $50M in sales.</p>
-                            <div class="social-links">
-                                <span class="icon">YT</span>
-                                <span class="icon">IG</span>
-                            </div>
-                        </div>
+                        <div class="impact-num gradient-text">50+</div>
+                        <h3>Apprenants Formés</h3>
+                        <p>Une communauté grandissante d'entrepreneurs digitaux.</p>
                     </div>
                     <div class="mentor-card glass-card">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80"
-                            alt="Lucas Bivert">
-                        <div class="mentor-info">
-                            <h3>Lucas Bivert</h3>
-                            <p class="role">Conversion Specialist</p>
-                            <p class="bio">Expert in brand building and high-conversion landing page design.</p>
-                            <div class="social-links">
-                                <span class="icon">YT</span>
-                                <span class="icon">IG</span>
-                            </div>
-                        </div>
+                        <div class="impact-num gradient-text">100%</div>
+                        <h3>Accompagnement</h3>
+                        <p>De la théorie à la mise en pratique réelle.</p>
                     </div>
                     <div class="mentor-card glass-card">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80"
-                            alt="Romain SEO">
-                        <div class="mentor-info">
-                            <h3>Romain SEO</h3>
-                            <p class="role">Organic Traffic King</p>
-                            <p class="bio">The master of SEO and organic growth for long-term brand sustainability.</p>
-                            <div class="social-links">
-                                <span class="icon">YT</span>
-                                <span class="icon">LI</span>
-                            </div>
-                        </div>
+                        <div class="impact-num gradient-text">Projets</div>
+                        <h3>Résultats Concrets</h3>
+                        <p>Des revenus générés en ligne grâce à nos méthodes.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="pricing" class="pricing section">
+        <section id="pricing" class="pricing section liquid-layer">
             <div class="container">
                 <div class="section-header">
                     <h2>Transparent <span class="gradient-text">Investment</span></h2>

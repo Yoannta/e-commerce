@@ -1,5 +1,64 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Reveal animations on scroll
+    // 1. Lenis Smooth Scroll Initialization
+    const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        orientation: 'vertical',
+        gestureOrientation: 'vertical',
+        smoothWheel: true,
+        wheelMultiplier: 1,
+        smoothTouch: false,
+        touchMultiplier: 2,
+        infinite: false,
+    });
+
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // 2. GSAP & ScrollTrigger Setup
+    gsap.registerPlugin(ScrollTrigger);
+
+    // 3. Liquid Depth Logic (Skew on scroll)
+    const layers = document.querySelectorAll('.liquid-layer');
+    lenis.on('scroll', (e) => {
+        const velocity = e.velocity * 0.1; // Scale down the effect
+        const skew = Math.min(Math.max(velocity, -1.5), 1.5);
+
+        layers.forEach(layer => {
+            gsap.to(layer, {
+                skewY: skew,
+                duration: 0.3,
+                ease: 'power1.out'
+            });
+        });
+    });
+
+    // 4. Parallax Hero Elements
+    gsap.to('.main-card', {
+        y: -100,
+        scrollTrigger: {
+            trigger: '.hero',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 1
+        }
+    });
+
+    gsap.to('.top-right', {
+        y: -150,
+        x: 50,
+        scrollTrigger: {
+            trigger: '.hero',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 1.5
+        }
+    });
+
+    // 5. Reveal animations on scroll
     const observerOptions = {
         threshold: 0.1
     };
@@ -12,8 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    // Apply reveal to elements
-    const revealElements = document.querySelectorAll('.course-card, .hero-content, .hero-visual');
+    const revealElements = document.querySelectorAll('.course-card, .section-header, .glass-card, .mentor-card');
     revealElements.forEach(el => {
         el.classList.add('reveal');
         observer.observe(el);
@@ -31,24 +89,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, 500);
 
-    // Sticky Nav shadow on scroll
+    // Sticky Nav Shadow
     window.addEventListener('scroll', () => {
         const nav = document.getElementById('main-nav');
         if (window.scrollY > 50) {
-            nav.style.boxShadow = '0 10px 30px -10px rgba(0, 0, 0, 0.5)';
+            nav.classList.add('scrolled');
         } else {
-            nav.style.boxShadow = 'none';
+            nav.classList.remove('scrolled');
         }
     });
 });
 
-// CSS for reveal animations (to be injected or added to style.css)
+// CSS for reveal animations
 const style = document.createElement('style');
 style.textContent = `
     .reveal {
         opacity: 0;
         transform: translateY(30px);
-        transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .reveal-active {
         opacity: 1;

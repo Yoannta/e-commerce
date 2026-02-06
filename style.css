@@ -1,18 +1,18 @@
 :root {
     --primary: #f97316;
-    /* Brand Orange */
     --primary-alt: #ea580c;
     --secondary: #fb923c;
-    --bg-dark: #1e293b;
-    --bg-darker: #0f172a;
-    /* Brand Navy */
+    --bg-dark: #121926;
+    --bg-darker: #05080f;
     --text-main: #f8fafc;
     --text-muted: #94a3b8;
     --glass: rgba(255, 255, 255, 0.03);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.8);
     --gradient-1: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
-    --font-main: 'Outfit', sans-serif;
+    --font-heading: 'Fraunces', serif;
+    --font-body: 'Manrope', sans-serif;
+    --bg-alt: #0a111e;
 }
 
 * {
@@ -24,9 +24,10 @@
 body {
     background-color: var(--bg-darker);
     color: var(--text-main);
-    font-family: var(--font-main);
-    line-height: 1.6;
+    font-family: var(--font-body);
+    line-height: 1.7;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
 .container {
@@ -44,16 +45,21 @@ body {
 
 /* Typography */
 h1 {
-    font-size: 4rem;
-    line-height: 1.1;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
+    font-family: var(--font-heading);
+    font-size: 5rem;
+    line-height: 1;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    letter-spacing: -0.04em;
+    font-style: italic;
 }
 
 h2 {
-    font-size: 2.5rem;
-    font-weight: 600;
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 700;
     margin-bottom: 1rem;
+    letter-spacing: -0.02em;
 }
 
 p {
@@ -69,21 +75,64 @@ p {
     -webkit-text-fill-color: transparent;
 }
 
-/* Navigation */
+/* Liquid Depth Layer Helper */
+.liquid-layer {
+    will-change: transform;
+    transition: transform 0.1s linear;
+}
+
+/* Breathing Cinematic Vignette */
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle, transparent 40%, rgba(0, 0, 0, 0.4) 100%);
+    z-index: 9999;
+    animation: breathe 10s ease-in-out infinite;
+}
+
+@keyframes breathe {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+}
+
+/* Navigation: Luminescent Dock */
 header {
-    padding: 1.5rem 0;
-    position: sticky;
-    top: 0;
+    padding: 1.25rem 0;
+    position: fixed;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1000;
-    background: rgba(2, 6, 23, 0.8);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--glass-border);
+    background: rgba(10, 17, 30, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 100px;
+    width: 90%;
+    max-width: 1100px;
+    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+header.scrolled {
+    width: 60%;
+    top: 1rem;
+    background: rgba(5, 8, 15, 0.95);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(249, 115, 22, 0.1);
 }
 
 header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 2.5rem;
 }
 
 .logo {
@@ -361,6 +410,72 @@ nav a:hover {
 .section-header {
     text-align: center;
     margin-bottom: 4rem;
+}
+
+.bg-alt {
+    background-color: var(--bg-alt);
+}
+
+.p-4 {
+    padding: 2.5rem;
+}
+
+.about-image {
+    display: flex;
+    justify-content: center;
+}
+
+.founder-card {
+    width: 100%;
+    max-width: 350px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.founder-card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.founder-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.founder-info p {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+}
+
+.badge-mini {
+    display: inline-block;
+    background: rgba(249, 115, 22, 0.1);
+    color: var(--primary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.feature-list {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.feature-list li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+}
+
+.feature-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: 700;
 }
 
 /* Course Cards */
