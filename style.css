@@ -581,10 +581,13 @@ nav a:hover {
 }
 
 .course-card {
-    background: var(--bg-dark);
+    background: var(--glass);
     border: 1px solid var(--glass-border);
-    border-radius: 16px;
+    border-radius: 20px;
     overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     transition: transform 0.3s, border-color 0.3s;
 }
 
@@ -847,6 +850,87 @@ nav a:hover {
     text-align: center;
     font-size: 0.8rem;
     color: var(--text-muted);
+}
+/* Time-Sliced Catalog Implementation */
+.slices-container {
+    position: relative;
+    width: 100%;
+    min-height: 250vh;
+    perspective: 1500px;
+    padding: 10rem 0;
+    margin-top: -5rem;
+}
+
+.slice {
+    position: absolute;
+    width: 100%;
+    height: 450px;
+    top: 50%;
+    left: 0;
+    transform-style: preserve-3d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+.slice-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    z-index: 10;
+}
+
+.slice-header h3 {
+    font-family: var(--font-heading);
+    font-size: 5.5rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.03);
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+    position: relative;
+    margin: 0;
+}
+
+.card-ring {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+}
+
+.card-ring .course-card {
+    position: absolute;
+    width: 320px;
+    pointer-events: auto;
+    transition: transform 0.5s var(--ease-premium), box-shadow 0.4s ease;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.card-ring .course-card:hover {
+    transform: translateY(-30px) scale(1.1) translateZ(150px) !important;
+    box-shadow: 0 50px 100px rgba(249, 115, 22, 0.3);
+    z-index: 100;
+}
+
+.slice[data-category="Foundations"] {
+    z-index: 4;
+}
+
+.slice[data-category="Scaling"] {
+    z-index: 3;
+}
+
+.slice[data-category="Sourcing"] {
+    z-index: 2;
+}
+
+.slice[data-category="Logistics"] {
+    z-index: 1;
 }
 
 @media (max-width: 968px) {

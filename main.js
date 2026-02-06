@@ -77,6 +77,45 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // 4.5 Time-Sliced Catalog Logic
+    const slices = document.querySelectorAll('.slice');
+    const slicesContainer = document.querySelector('.slices-container');
+
+    const sliceTL = gsap.timeline({
+        scrollTrigger: {
+            trigger: slicesContainer,
+            start: "top center",
+            end: "bottom bottom",
+            scrub: 1,
+            pin: true,
+            anticipatePin: 1
+        }
+    });
+
+    slices.forEach((slice, i) => {
+        const isOdd = i % 2 !== 0;
+        const xOffset = isOdd ? 150 : -150;
+
+        // Initial state
+        gsap.set(slice, { opacity: 0, z: -500, rotateX: isOdd ? 45 : -45 });
+
+        // Animation in the timeline
+        sliceTL.to(slice, {
+            opacity: 1,
+            z: 0,
+            rotateX: 0,
+            duration: 1,
+            ease: "power2.out"
+        }, i * 0.8)
+            .to(slice, {
+                opacity: 0,
+                z: 500,
+                rotateX: isOdd ? -45 : 45,
+                duration: 1,
+                ease: "power2.in"
+            }, (i + 0.5) * 0.8);
+    });
+
     // 5. Liquid Depth Logic (Skew on scroll)
     const layers = document.querySelectorAll('.liquid-layer');
     lenis.on('scroll', (e) => {
