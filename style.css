@@ -104,28 +104,20 @@ body::after {
     }
 }
 
-/* Navigation: Luminescent Dock */
+/* Navigation: Home-only Dock (Static) */
 header {
-    padding: 1.25rem 0;
-    position: fixed;
+    padding: 1.5rem 0;
+    position: absolute;
     top: 2rem;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
-    background: rgba(10, 17, 30, 0.7);
+    background: rgba(10, 17, 30, 0.4);
     backdrop-filter: blur(20px);
     border: 1px solid var(--glass-border);
     border-radius: 100px;
     width: 90%;
     max-width: 1100px;
-    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-header.scrolled {
-    width: 60%;
-    top: 1rem;
-    background: rgba(5, 8, 15, 0.95);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(249, 115, 22, 0.1);
 }
 
 header .container {
