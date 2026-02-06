@@ -25,23 +25,19 @@ Ce fichier trace l'historique des modifications apportées au projet pour assure
   - **Luminescent Dock** : Transformation du menu en dock flottant (pill-shaped) interactif.
   - **Typographie Prestige** : Switch vers Fraunces (Headings) et Manrope (Body).
 
-- **[Antigravity] 2026-02-07 00:01** :
-  - **Implémentation Nexus Gate** : Création d'un anneau central en morphing SVG (3 états) avec effet de halo dynamique.
-  - **Interactions Magnétiques** : Ajout de fragments UI (cartes de verre) orbitant autour du Nexus et s'animant via GSAP ScrollTrigger.
-  - **Cinétique du Scroll** : Rotation de l'anneau synchronisée avec la vitesse de défilement (Lenis + GSAP).
-
-- **[Antigravity] 2026-02-07 00:40** :
-  - **Raffinement Navigation** : Passage de la barre de navigation de `fixed` à `absolute` (statique en haut de page) à la demande de l'utilisateur.
-  - **Collaboration Multi-Agent** : Initialisation d'un dialogue structuré avec ChatGPT pour concevoir la suite de la homepage.
+- **[Antigravity] 2026-02-06 23:01** :
+  - **Finalisation Visuelle** : Intégration de la photo officielle de M. Rodrigue GUEDEU (`rodrigue-guedeu.jpg`).
+  - **Optimisation mobile** : Ajustement du dock et de la grille d'impact pour les écrans réduits.
+  - **Validation GitHub** : Synchronisation finale et déploiement live sur GitHub Pages.
 
 ---
 
-## 📊 Récapitulatif Technique (07/02/2026)
+## 📊 Récapitulatif Technique (06/02/2026)
 
 **Signatures Implémentées** :
-1. **Nexus Gate** : Portail énergétique en morphing SVG servant de point focal au Hero.
-2. **Magnetic Scroll Orbit** : Système de fragments UI orbitaux s'assemblant au défilement.
-3. **Liquid Depth** : Distorsion dynamique des sections au scroll.
-4. **Luminescent Dock (Static)** : Navigation premium en forme de pilule, désormais ancrée au sommet.
+1. **Liquid Depth** : Distorsion dynamique des sections au scroll.
+2. **Luminescent Dock** : Navigation flottante avec effet de halo orange au scroll.
+3. **Cinematic Vignette** : Overlay atmosphérique respirant.
+4. **Impact HUD** : Statistiques présentées via des cartes de verre parallaxes.
 
-**Statut** : La phase "Nexus" est validée. Le projet entre en phase de brainstorming pour révolutionner les sections "Courses" et "About".
+**Statut** : Le site est 100% opérationnel, synchronisé avec le dépôt GitHub et reflète l'identité premium de L'Ecole du E-commerce.

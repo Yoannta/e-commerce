@@ -210,105 +210,17 @@ nav a:hover {
     background: var(--glass);
 }
 
-/* Nexus Gate Visuals */
-.nexus-wrapper {
+/* Hero background stabilization */
+.hero-bg-glow {
     position: absolute;
-    inset: 0;
-    z-index: 1;
-    overflow: hidden;
-    pointer-events: none;
-}
-
-.nexus-ring {
-    position: absolute;
-    top: 50%;
-    right: 5%;
-    transform: translateY(-50%);
     width: 600px;
     height: 600px;
-}
-
-.nexus-ring svg {
-    width: 100%;
-    height: 100%;
-    filter: drop-shadow(0 0 30px rgba(249, 115, 22, 0.4));
-}
-
-#nexus-path {
-    fill: none;
-    stroke: var(--primary);
-    stroke-width: 1.5;
-    stroke-dasharray: 5, 5;
-    opacity: 0.6;
-}
-
-.nexus-glow {
-    position: absolute;
-    inset: 20%;
     background: radial-gradient(circle, rgba(249, 115, 22, 0.15) 0%, transparent 70%);
-    border-radius: 50%;
-    filter: blur(40px);
-    animation: nexus-pulse 4s ease-in-out infinite;
-}
-
-@keyframes nexus-pulse {
-
-    0%,
-    100% {
-        transform: scale(1);
-        opacity: 0.5;
-    }
-
-    50% {
-        transform: scale(1.1);
-        opacity: 0.8;
-    }
-}
-
-.fragment {
-    position: absolute;
-    padding: 1rem 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    white-space: nowrap;
-    z-index: 5;
-    will-change: transform;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3), inset 0 0 15px rgba(255, 255, 255, 0.1);
-}
-
-.frag-info span {
-    display: block;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    color: var(--text-muted);
-}
-
-.frag-info strong {
-    font-size: 1rem;
-    color: var(--text-main);
-}
-
-.frag-1 {
-    top: 20%;
-    right: 15%;
-}
-
-.frag-2 {
     top: 50%;
-    right: 25%;
-}
-
-.frag-3 {
-    bottom: 20%;
-    right: 10%;
-}
-
-/* Hide redundant visual cards from old hero if needed, 
-   but keeping them for density as "background" elements 
-*/
-.hero-visual {
-    opacity: 0.4;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: none;
 }
 
 .hero {
@@ -573,78 +485,120 @@ nav a:hover {
     font-weight: 700;
 }
 
-/* Course Cards */
-.course-grid {
+/* Living Curriculum Bento Grid */
+.bento-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(6, 120px);
+    gap: 1.5rem;
+    margin-top: 3rem;
 }
 
-.course-card {
-    background: var(--glass);
+.bento-card {
+    position: relative;
+    background: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(20px);
     border: 1px solid var(--glass-border);
-    border-radius: 20px;
+    border-radius: 24px;
+    padding: 2rem;
     overflow: hidden;
-    height: 100%;
+    transition: transform 0.4s var(--ease-premium), border-color 0.4s ease;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s, border-color 0.3s;
+    justify-content: flex-end;
+    cursor: pointer;
 }
 
-.course-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--primary);
+.bento-card:hover {
+    border-color: rgba(249, 115, 22, 0.4);
+    transform: translateY(-5px);
 }
 
-.course-card.featured {
-    border-color: var(--primary);
-    box-shadow: 0 0 20px rgba(249, 115, 22, 0.2);
+.card-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(249, 115, 22, 0.08), transparent 40%);
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
 }
 
-.card-image {
-    height: 200px;
-    background-size: cover;
-    background-position: center;
+.bento-card:hover .card-glow {
+    opacity: 1;
 }
 
-.bg-1 {
-    background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=500&q=80');
-}
-
-.bg-2 {
-    background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=500&q=80');
-}
-
-.bg-3 {
-    background-image: url('https://images.unsplash.com/photo-1566241440091-ec10de8db2e1?auto=format&fit=crop&w=500&q=80');
-}
-
-.card-body {
-    padding: 1.5rem;
-}
-
-.tag {
+.bento-card .tag {
     font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 700;
-    color: var(--secondary);
+    color: var(--primary);
     margin-bottom: 0.5rem;
-    display: block;
 }
 
-.card-body h3 {
+.bento-card h3 {
+    font-size: 1.5rem;
     margin-bottom: 0.75rem;
+    color: var(--text-main);
 }
 
-.card-meta {
-    display: flex;
-    justify-content: space-between;
+.bento-card p {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+    opacity: 0.8;
+}
+
+/* Grid Assignments */
+.bento-h1 {
+    grid-column: span 7;
+    grid-row: span 2;
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.05) 0%, rgba(15, 23, 42, 0.4) 100%);
+}
+
+.bento-h2 {
+    grid-column: span 5;
+    grid-row: span 1;
+    justify-content: center;
     align-items: center;
-    margin-top: 1.5rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--glass-border);
-    font-weight: 600;
+}
+
+.bento-h3 {
+    grid-column: span 5;
+    grid-row: span 2;
+}
+
+.bento-h4 {
+    grid-column: span 3;
+    grid-row: span 1;
+    justify-content: center;
+}
+
+.bento-h5 {
+    grid-column: span 4;
+    grid-row: span 2;
+}
+
+.bento-h6 {
+    grid-column: span 3;
+    grid-row: span 3;
+}
+
+.bento-h7 {
+    grid-column: span 6;
+    grid-row: span 2;
+}
+
+.bento-h8 {
+    grid-column: span 6;
+    grid-row: span 2;
+}
+
+@media (max-width: 1024px) {
+    .bento-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bento-card {
+        min-height: 200px;
+    }
 }
 
 @media (max-width: 968px) {
@@ -850,89 +804,6 @@ nav a:hover {
     text-align: center;
     font-size: 0.8rem;
     color: var(--text-muted);
-}
-
-/* Focus-Stack Courses Implementation (Correction) */
-.slices-container {
-    position: relative;
-    width: 100%;
-    min-height: 400vh;
-    /* More scroll space for reading */
-    perspective: 2000px;
-    padding: 0;
-    margin-top: -10vh;
-}
-
-.slice {
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    pointer-events: none;
-    opacity: 0;
-    transform-style: preserve-3d;
-    will-change: transform, opacity;
-}
-
-.slice-header {
-    text-align: center;
-    margin-bottom: 2rem;
-    z-index: 10;
-}
-
-.slice-header h3 {
-    font-family: var(--font-heading);
-    font-size: 4.5rem;
-    font-weight: 800;
-    color: var(--text-main);
-    text-shadow: 0 0 30px rgba(249, 115, 22, 0.2);
-    margin: 0;
-}
-
-.slice-header h3 span {
-    display: block;
-    font-family: var(--font-body);
-    font-size: 1rem;
-    color: var(--primary);
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    margin-bottom: 0.5rem;
-}
-
-.card-ring {
-    position: relative;
-    width: 100%;
-    max-width: 1100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    transform-style: preserve-3d;
-}
-
-.card-ring .course-card {
-    position: relative;
-    width: 380px;
-    pointer-events: auto;
-    background: rgba(15, 23, 42, 0.8);
-    backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border);
-    transition: transform 0.4s var(--ease-premium), border-color 0.4s ease;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
-}
-
-.card-ring .course-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    border-color: var(--primary);
-}
-
-.slice[data-category] {
-    z-index: 5;
 }
 
 @media (max-width: 968px) {
