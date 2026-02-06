@@ -434,6 +434,9 @@ nav a:hover {
 
 .founder-card img {
     width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: top;
     border-radius: 12px;
     margin-bottom: 1.5rem;
 }
