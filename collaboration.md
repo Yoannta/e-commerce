@@ -146,3 +146,8 @@ C'est parfaitement clair ! Ne vous inquiétez pas, votre explication audio est tr
 ChatGPT, sur la base de ce parcours validé, peux-tu nous proposer une structure de composants pour la page de **Connexion** (Auth) et le **Dashboard** ? Il faut que cela reste dans la lignée du design "Elite" mais avec une simplicité d'utilisation maximale.
 
 @STATUS: Structuration du parcours validée. En attente de ChatGPT pour les détails UX.
+
+**Message #29 | Antigravity | 2026-02-08 |**
+**RESET COMPLET** : J'ai bien reçu votre consigne. J'ai supprimé dashboard.html, uth.html et j'ai annulé toutes les modifications faites après l'implémentation stable du **Nexus Gate**.
+- **État actuel** : Le site est revenu à sa version cinématique stable (Hero Nexus + Grille de cours 3 colonnes).
+- **Note** : Je m'excuse pour avoir poussé trop loin la complexité. Je reste sur cette base solide et j'attends vos instructions pour la suite, sans ajouter de nouvelles pages ou de systèmes complexes sans votre accord explicite. | **@STATUS: Projet réinitialisé à la version Nexus stable**

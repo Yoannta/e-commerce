@@ -30,11 +30,10 @@
             <nav>
                 <ul>
                     <li><a href="#courses">Courses</a></li>
-                    <li><a href="dashboard.html">Dashboard</a></li>
                     <li><a href="#mentors">Mentors</a></li>
                     <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="auth.html" class="btn-secondary">Login</a></li>
-                    <li><a href="auth.html" class="btn-primary">Join Now</a></li>
+                    <li><a href="#login" class="btn-secondary">Login</a></li>
+                    <li><a href="#join" class="btn-primary">Join Now</a></li>
                 </ul>
             </nav>
         </div>
@@ -67,8 +66,6 @@
                 </div>
             </div>
 
-            <div class="hero-bg-glow"></div>
-
             <div class="container grid">
                 <div class="hero-content">
                     <span class="badge">Elite Training 2026</span>
@@ -76,7 +73,7 @@
                     <p>Unlock the strategies used by 7-figure store owners. From product sourcing to high-conversion
                         scaling, we provide the ultimate blueprint.</p>
                     <div class="cta-group">
-                        <a href="auth.html" class="btn-primary-large">Start Scaling Now</a>
+                        <a href="#join" class="btn-primary-large">Start Scaling Now</a>
                         <a href="#courses" class="btn-outline">Browse Courses</a>
                     </div>
                     <div class="hero-stats">
@@ -173,101 +170,51 @@
                 </div>
             </div>
         </section>
-        <section id="courses" class="courses section liquid-layer">
-            <div class="container">
-                <div class="section-header">
-                    <span class="badge-mini">Curriculum 2026</span>
-                    <h2>The <span class="gradient-text">Living Curriculum</span></h2>
-                    <p>Une architecture de formation modulaire, conçue pour l'excellence opérationnelle.</p>
+        <div class="container">
+            <div class="section-header">
+                <h2>Master Every <span class="gradient-text">Skillset</span></h2>
+                <p>Designed for every stage of your journey, from beginner to enterprise.</p>
+            </div>
+            <div class="course-grid">
+                <!-- Course cards will be styled here -->
+                <div class="course-card">
+                    <div class="card-image bg-1"></div>
+                    <div class="card-body">
+                        <span class="tag">Foundation</span>
+                        <h3>Ecom Foundations 2.0</h3>
+                        <p>Build your first store from scratch in 30 days.</p>
+                        <div class="card-meta">
+                            <span>12 Modules</span>
+                            <span>$297</span>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="bento-grid">
-                    <!-- Module 1: Foundations (Big) -->
-                    <a href="auth.html" class="bento-card bento-h1" data-category="Strategy">
-                        <div class="card-glow"></div>
-                        <div class="card-content">
-                            <span class="tag">01. Fondations</span>
-                            <h3>Ecom Elite Foundations 2.0</h3>
-                            <p>Maîtrisez les bases du e-commerce moderne en 30 jours. De la recherche de niche à la
-                                première vente.</p>
-                            <div class="card-stats">
-                                <span>12 Modules</span>
-                                <span>Certifiant</span>
-                            </div>
+                <div class="course-card featured">
+                    <div class="card-image bg-2"></div>
+                    <div class="card-body">
+                        <span class="tag">Scaling</span>
+                        <h3>The Scaling Blueprint</h3>
+                        <p>Advanced Facebook and TikTok Ads strategies for $10k+ days.</p>
+                        <div class="card-meta">
+                            <span>24 Modules</span>
+                            <span>$997</span>
                         </div>
-                    </a>
-
-                    <!-- Module 2: Success Hub (Thin Top) -->
-                    <a href="auth.html" class="bento-card bento-h2" data-category="Community">
-                        <div class="card-glow"></div>
-                        <div class="card-content">
-                            <span class="tag">Hub</span>
-                            <h3>Accès Discord Privé</h3>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="card-image bg-3"></div>
+                    <div class="card-body">
+                        <span class="tag">Dropshipping</span>
+                        <h3>Sourcing Mastery</h3>
+                        <p>Private agent networking and supply chain optimization.</p>
+                        <div class="card-meta">
+                            <span>8 Modules</span>
+                            <span>$497</span>
                         </div>
-                    </a>
-
-                    <!-- Module 3: Scaling (Vertical) -->
-                    <a href="auth.html" class="bento-card bento-h3" data-category="Growth">
-                        <div class="card-glow"></div>
-                        <div class="card-content">
-                            <span class="tag">02. Scaling</span>
-                            <h3>Publicité Haute Performance</h3>
-                            <p>Facebook, TikTok & Google Ads. Stratégies de scaling agressives et gestion de budget
-                                publicitaire.</p>
-                        </div>
-                    </a>
-
-                    <!-- Module 4: Analytics (Small) -->
-                    <a href="auth.html" class="bento-card bento-h4" data-category="Data">
-                        <div class="card-glow"></div>
-                        <div class="card-content">
-                            <span class="tag">Stats</span>
-                            <h3>Tracking & Data</h3>
-                        </div>
-                    </a>
-
-                    <!-- Module 5: Sourcing (Large Square) -->
-                    <a href="auth.html" class="bento-card bento-h5" data-category="Supply">
-                        <div class="card-glow"></div>
-                        <div class="card-content">
-                            <span class="tag">03. Sourcing</span>
-                            <h3>Le Réseau Sourcing Mastery</h3>
-                            <p>Accès direct à nos agents privés en Chine et en Turquie. Négociation, contrôle qualité et
-                                logistique internationale.</p>
-                        </div>
-                    </a>
-
-                    <!-- Module 6: Logistics (Tall) -->
-                    <a href="auth.html" class="bento-card bento-h6" data-category="Ops">
-                        <div class="card-glow"></div>
-                        <div class="card-content">
-                            <span class="tag">04. Logistique</span>
-                            <h3>Cash On Delivery (COD)</h3>
-                            <p>Maîtrisez le paiement à la livraison sur les marchés émergents.</p>
-                        </div>
-                    </a>
-
-                    <!-- Module 7: Coaching (Wide) -->
-                    <a href="auth.html" class="bento-card bento-h7" data-category="Mentoring">
-                        <div class="card-glow"></div>
-                        <div class="card-content">
-                            <span class="tag">Live</span>
-                            <h3>Coaching Hebdomadaire Intensif</h3>
-                            <p>Sessions de questions-réponses en direct toutes les semaines avec M. Rodrigue GUEDEU.</p>
-                        </div>
-                    </a>
-
-                    <!-- Module 8: Dashboard (Wide) -->
-                    <a href="auth.html" class="bento-card bento-h8" data-category="Software">
-                        <div class="card-glow"></div>
-                        <div class="card-content">
-                            <span class="tag">Tool</span>
-                            <h3>Tableau de Bord "Success Tracker"</h3>
-                            <p>Pilotez votre progression et vos résultats réels depuis votre espace membre.</p>
-                        </div>
-                    </a>
+                    </div>
                 </div>
             </div>
+        </div>
         </section>
         <section id="mentors" class="mentors section liquid-layer">
             <div class="container">
