@@ -1,132 +1,277 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Initiation au E-commerce | L'ÉCOLE DU E-COMMERCE</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Manrope:wght@200..800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <style>
-        .course-hero {
-            padding: 10rem 0 6rem;
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .course-badge-premium {
-            background: rgba(249, 115, 22, 0.1);
-            color: var(--primary);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            display: inline-block;
-            margin-bottom: 2rem;
-        }
-
-        .curriculum-list {
-            list-style: none;
-            margin-top: 3rem;
-        }
-
-        .curriculum-item {
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            margin-bottom: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .curriculum-item h4 {
-            font-size: 1rem;
-            font-weight: 700;
-        }
-
-        .curriculum-item span {
-            color: var(--text-muted);
-            font-size: 0.8rem;
-        }
-    </style>
-</head>
-
-<body>
-    <header id="main-nav">
-        <div class="container">
-            <div class="logo">
-                <img src="logo.jpg" alt="Logo" class="logo-img">
-                L'Ecole du<span> E-commerce</span>
-            </div>
-            <nav>
+<!DOCTYPE html>
+
+<html lang="fr">
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Initiation au E-commerce | L'ÉCOLE DU E-COMMERCE</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Manrope:wght@200..800&display=swap"
+
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <style>
+
+        .course-hero {
+
+            padding: 10rem 0 6rem;
+
+            display: grid;
+
+            grid-template-columns: 1.2fr 1fr;
+
+            gap: 4rem;
+
+            align-items: center;
+
+        }
+
+
+
+        .course-badge-premium {
+
+            background: rgba(249, 115, 22, 0.1);
+
+            color: var(--primary);
+
+            padding: 0.5rem 1rem;
+
+            border-radius: 50px;
+
+            font-size: 0.8rem;
+
+            font-weight: 800;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+
+            display: inline-block;
+
+            margin-bottom: 2rem;
+
+        }
+
+
+
+        .curriculum-list {
+
+            list-style: none;
+
+            margin-top: 3rem;
+
+        }
+
+
+
+        .curriculum-item {
+
+            padding: 1.5rem;
+
+            background: rgba(255, 255, 255, 0.03);
+
+            border: 1px solid var(--glass-border);
+
+            border-radius: 16px;
+
+            margin-bottom: 1rem;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+        }
+
+
+
+        .curriculum-item h4 {
+
+            font-size: 1rem;
+
+            font-weight: 700;
+
+        }
+
+
+
+        .curriculum-item span {
+
+            color: var(--text-muted);
+
+            font-size: 0.8rem;
+
+        }
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+    <header id="main-nav">
+
+        <div class="container">
+
+            <div class="logo">
+
+                <img src="logo.jpg" alt="Logo" class="logo-img">
+
+                L'Ecole du<span> E-commerce</span>
+
+            </div>
+
+            <nav>
+
                 <ul>
+
                     <li><a href="index.html">Accueil</a></li>
-                    <li><a href="courses.html">Cours</a></li>
-                    <li><a href="login.html" class="btn-primary">S'inscrire Gratuitement</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <main class="container">
-        <section class="course-hero">
-            <div class="hero-text">
-                <span class="course-badge-premium">Accès Gratuit</span>
-                <h1 style="font-size: 3.5rem; line-height: 1.1;">Initiation au <br><span
-                        class="gradient-text">E-commerce 2026</span></h1>
-                <p style="font-size: 1.2rem; margin-top: 1.5rem; color: var(--text-muted); line-height: 1.7;">
-                    Découvrez les mécanismes réels derrière les boutiques à succès. Pas de théorie complexe, uniquement
-                    du concret pour vous lancer dès aujourd'hui.
-                </p>
-                <div style="margin-top: 2.5rem;">
-                    <a href="login.html" class="btn-primary-large">Démarrer Maintenant</a>
-                </div>
-            </div>
-            <div class="hero-preview">
-                <div class="glass-card" style="padding: 2.5rem; border-radius: 32px;">
-                    <h3>Ce que vous allez apprendre</h3>
-                    <ul class="curriculum-list">
-                        <li class="curriculum-item">
-                            <h4>1. Le Business Model</h4>
-                            <span>15 min</span>
-                        </li>
-                        <li class="curriculum-item">
-                            <h4>2. Choisir sa Niche</h4>
-                            <span>25 min</span>
-                        </li>
-                        <li class="curriculum-item">
-                            <h4>3. Le Sourcing Local</h4>
-                            <span>30 min</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 L'Ecole du E-commerce. Votre succès commence ici.</p>
-        </div>
-    </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            gsap.from(".hero-text > *", { x: -30, opacity: 0, duration: 1, stagger: 0.2, ease: "power3.out" });
-            gsap.from(".hero-preview", { scale: 0.9, opacity: 0, duration: 1.2, ease: "power3.out", delay: 0.5 });
-        });
-    </script>
-</body>
-
+                    <li><a href="courses.html" class="active">Cours</a></li>
+
+                    <li class="is-hidden" data-auth-visible="logged_in"><a href="dashboard.html">Mon espace</a></li>
+
+                    <li><a href="login.html" class="btn-secondary" data-auth="login" data-auth-link>Connexion</a></li>
+
+                    <li><a href="register.html" class="btn-primary" data-auth="join" data-auth-link>Inscription</a></li>
+
+                    <li class="nav-avatar-wrap is-hidden" data-auth="avatar">
+                        <a href="dashboard.html" class="nav-avatar"><span data-auth="avatar-letter">A</span></a>
+                        <div class="nav-avatar-menu">
+                            <a href="dashboard.html">Dashboard</a>
+                            <a href="courses.html">Mes cours</a>
+                            <a href="#" data-action="logout">Déconnexion</a>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <main class="container">
+
+        <section class="course-hero">
+
+            <div class="hero-text">
+
+                <span class="course-badge-premium">Accès Gratuit</span>
+
+                <h1 style="font-size: 3.5rem; line-height: 1.1;">Initiation au <br><span
+
+                        class="gradient-text">E-commerce 2026</span></h1>
+
+                <p style="font-size: 1.2rem; margin-top: 1.5rem; color: var(--text-muted); line-height: 1.7;">
+
+                    Découvrez les mécanismes réels derrière les boutiques à succès. Pas de théorie complexe, uniquement
+
+                    du concret pour vous lancer dès aujourd'hui.
+
+                </p>
+
+                <div style="margin-top: 2.5rem;">
+
+                    <a href="login.html" class="btn-primary-large">Démarrer Maintenant</a>
+
+                </div>
+
+            </div>
+
+            <div class="hero-preview">
+
+                <div class="glass-card" style="padding: 2.5rem; border-radius: 32px;">
+
+                    <h3>Ce que vous allez apprendre</h3>
+
+                    <ul class="curriculum-list">
+
+                        <li class="curriculum-item">
+
+                            <h4>1. Le Business Model</h4>
+
+                            <span>15 min</span>
+
+                        </li>
+
+                        <li class="curriculum-item">
+
+                            <h4>2. Choisir sa Niche</h4>
+
+                            <span>25 min</span>
+
+                        </li>
+
+                        <li class="curriculum-item">
+
+                            <h4>3. Le Sourcing Local</h4>
+
+                            <span>30 min</span>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <p>&copy; 2026 L'Ecole du E-commerce. Votre succès commence ici.</p>
+
+        </div>
+
+    </footer>
+
+
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            gsap.from(".hero-text > *", { x: -30, opacity: 0, duration: 1, stagger: 0.2, ease: "power3.out" });
+
+            gsap.from(".hero-preview", { scale: 0.9, opacity: 0, duration: 1.2, ease: "power3.out", delay: 0.5 });
+
+        });
+
+    </script>
+
+    <script src="auth.js"></script>
+</body>
+
+
+
 </html>

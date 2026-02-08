@@ -1,148 +1,309 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecom Elite Foundations 2.0 | L'ÉCOLE DU E-COMMERCE</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Manrope:wght@200..800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <style>
-        .premium-hero {
-            padding: 10rem 0 6rem;
-            text-align: center;
-        }
-
-        .benefit-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin: 4rem 0;
-        }
-
-        .benefit-card {
-            padding: 2.5rem;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            text-align: left;
-            transition: all 0.3s;
-        }
-
-        .benefit-card:hover {
-            border-color: var(--primary);
-            background: rgba(249, 115, 22, 0.05);
-        }
-
-        .benefit-card h3 {
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-
-        .cta-section {
-            padding: 5rem;
-            background: var(--glass);
-            border-radius: 40px;
-            text-align: center;
-            border: 1px solid var(--glass-border);
-            margin-bottom: 6rem;
-        }
-
-        .price-display {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin: 2rem 0;
-            color: #fff;
-        }
-    </style>
-</head>
-
-<body>
-    <header id="main-nav">
-        <div class="container">
-            <div class="logo">
-                <img src="logo.jpg" alt="Logo" class="logo-img">
-                L'Ecole du<span> E-commerce</span>
-            </div>
-            <nav>
+<!DOCTYPE html>
+
+<html lang="fr">
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ecom Elite Foundations 2.0 | L'ÉCOLE DU E-COMMERCE</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Manrope:wght@200..800&display=swap"
+
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <style>
+
+        .premium-hero {
+
+            padding: 10rem 0 6rem;
+
+            text-align: center;
+
+        }
+
+
+
+        .benefit-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 2rem;
+
+            margin: 4rem 0;
+
+        }
+
+
+
+        .benefit-card {
+
+            padding: 2.5rem;
+
+            background: rgba(255, 255, 255, 0.03);
+
+            border: 1px solid var(--glass-border);
+
+            border-radius: 24px;
+
+            text-align: left;
+
+            transition: all 0.3s;
+
+        }
+
+
+
+        .benefit-card:hover {
+
+            border-color: var(--primary);
+
+            background: rgba(249, 115, 22, 0.05);
+
+        }
+
+
+
+        .benefit-card h3 {
+
+            margin-bottom: 1rem;
+
+            color: var(--primary);
+
+        }
+
+
+
+        .cta-section {
+
+            padding: 5rem;
+
+            background: var(--glass);
+
+            border-radius: 40px;
+
+            text-align: center;
+
+            border: 1px solid var(--glass-border);
+
+            margin-bottom: 6rem;
+
+        }
+
+
+
+        .price-display {
+
+            font-size: 3.5rem;
+
+            font-weight: 800;
+
+            margin: 2rem 0;
+
+            color: #fff;
+
+        }
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+    <header id="main-nav">
+
+        <div class="container">
+
+            <div class="logo">
+
+                <img src="logo.jpg" alt="Logo" class="logo-img">
+
+                L'Ecole du<span> E-commerce</span>
+
+            </div>
+
+            <nav>
+
                 <ul>
+
                     <li><a href="index.html">Accueil</a></li>
-                    <li><a href="courses.html">Cours</a></li>
-                    <li><a href="#register" class="btn-primary">S'inscrire</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <main class="container">
-        <section class="premium-hero">
-            <span class="badge" style="background: var(--primary); color: #fff;">Programme Amiral</span>
-            <h1 style="font-size: 4rem; margin-top: 1.5rem;">Ecom Elite <span class="gradient-text">Foundations
-                    2.0</span></h1>
-            <p style="max-width: 700px; margin: 2rem auto; font-size: 1.25rem; color: var(--text-muted);">
-                Le programme le plus complet d'Afrique Francophone pour bâtir, scaler et pérenniser votre empire
-                e-commerce en partant de zéro.
-            </p>
-        </section>
-
-        <div class="benefit-grid">
-            <div class="benefit-card">
-                <h3>01. Le Sourcing d'Élite</h3>
-                <p>Accès direct à nos agents en Chine et en Turquie. Apprenez à négocier les meilleurs prix sans
-                    intermédiaire.</p>
-            </div>
-            <div class="benefit-card">
-                <h3>02. Publicité Haute Performance</h3>
-                <p>Maîtrisez Facebook, TikTok et Google Ads avec des stratégies de scaling validées sur le terrain.</p>
-            </div>
-            <div class="benefit-card">
-                <h3>03. Logistique & Delivery</h3>
-                <p>Optimisez votre Cash On Delivery (COD) et réduisez vos retours de colis au strict minimum.</p>
-            </div>
-        </div>
-
-        <section id="register" class="cta-section">
-            <h2>Prêt à changer de <span class="gradient-text">Dimension</span> ?</h2>
-            <p style="margin-top: 1rem; color: var(--text-muted);">Rejoignez plus de 50 entrepreneurs déjà formés par M.
-                Rodrigue Guedeu.</p>
-
-            <div class="price-display">297.000 FCFA</div>
-
-            <a href="thankyou.html" class="btn-primary-large" style="padding: 1.5rem 4rem; font-size: 1.25rem;">
-                Réserver ma place sur WhatsApp
-            </a>
-            <p style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-muted);">
-                Le clic vous redirigera vers WhatsApp pour finaliser votre inscription avec notre équipe.
-            </p>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 L'Ecole du E-commerce. L'excellence au service de votre succès.</p>
-        </div>
-    </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            gsap.from(".premium-hero > *", { y: -30, opacity: 0, duration: 1, stagger: 0.2, ease: "power3.out" });
-            gsap.from(".benefit-card", {
-                y: 30,
-                opacity: 0,
-                duration: 1,
-                stagger: 0.2,
-                scrollTrigger: {
-                    trigger: ".benefit-grid",
-                    start: "top 80%"
-                }
-            });
-        });
-    </script>
-</body>
-
+                    <li><a href="courses.html" class="active">Cours</a></li>
+
+                    <li class="is-hidden" data-auth-visible="logged_in"><a href="dashboard.html">Mon espace</a></li>
+
+                    <li><a href="login.html" class="btn-secondary" data-auth="login" data-auth-link>Connexion</a></li>
+
+                    <li><a href="register.html" class="btn-primary" data-auth="join" data-auth-link>Inscription</a></li>
+
+                    <li class="nav-avatar-wrap is-hidden" data-auth="avatar">
+                        <a href="dashboard.html" class="nav-avatar"><span data-auth="avatar-letter">A</span></a>
+                        <div class="nav-avatar-menu">
+                            <a href="dashboard.html">Dashboard</a>
+                            <a href="courses.html">Mes cours</a>
+                            <a href="#" data-action="logout">Déconnexion</a>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <main class="container">
+
+        <section class="premium-hero">
+
+            <span class="badge" style="background: var(--primary); color: #fff;">Programme Amiral</span>
+
+            <h1 style="font-size: 4rem; margin-top: 1.5rem;">Ecom Elite <span class="gradient-text">Foundations
+
+                    2.0</span></h1>
+
+            <p style="max-width: 700px; margin: 2rem auto; font-size: 1.25rem; color: var(--text-muted);">
+
+                Le programme le plus complet d'Afrique Francophone pour bâtir, scaler et pérenniser votre empire
+
+                e-commerce en partant de zéro.
+
+            </p>
+
+        </section>
+
+
+
+        <div class="benefit-grid">
+
+            <div class="benefit-card">
+
+                <h3>01. Le Sourcing d'Élite</h3>
+
+                <p>Accès direct à nos agents en Chine et en Turquie. Apprenez à négocier les meilleurs prix sans
+
+                    intermédiaire.</p>
+
+            </div>
+
+            <div class="benefit-card">
+
+                <h3>02. Publicité Haute Performance</h3>
+
+                <p>Maîtrisez Facebook, TikTok et Google Ads avec des stratégies de scaling validées sur le terrain.</p>
+
+            </div>
+
+            <div class="benefit-card">
+
+                <h3>03. Logistique & Delivery</h3>
+
+                <p>Optimisez votre Cash On Delivery (COD) et réduisez vos retours de colis au strict minimum.</p>
+
+            </div>
+
+        </div>
+
+
+
+        <section id="register" class="cta-section">
+
+            <h2>Prêt à changer de <span class="gradient-text">Dimension</span> </h2>
+
+            <p style="margin-top: 1rem; color: var(--text-muted);">Rejoignez plus de 50 entrepreneurs déjà formés par M.
+
+                Rodrigue Guedeu.</p>
+
+
+
+            <div class="price-display">297.000 FCFA</div>
+
+
+
+            <a href="thankyou.html" class="btn-primary-large" style="padding: 1.5rem 4rem; font-size: 1.25rem;">
+
+                Réserver ma place sur WhatsApp
+
+            </a>
+
+            <p style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-muted);">
+
+                Le clic vous redirigera vers WhatsApp pour finaliser votre inscription avec notre équipe.
+
+            </p>
+
+        </section>
+
+    </main>
+
+
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <p>&copy; 2026 L'Ecole du E-commerce. L'excellence au service de votre succès.</p>
+
+        </div>
+
+    </footer>
+
+
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            gsap.from(".premium-hero > *", { y: -30, opacity: 0, duration: 1, stagger: 0.2, ease: "power3.out" });
+
+            gsap.from(".benefit-card", {
+
+                y: 30,
+
+                opacity: 0,
+
+                duration: 1,
+
+                stagger: 0.2,
+
+                scrollTrigger: {
+
+                    trigger: ".benefit-grid",
+
+                    start: "top 80%"
+
+                }
+
+            });
+
+        });
+
+    </script>
+
+    <script src="auth.js"></script>
+</body>
+
+
+
 </html>

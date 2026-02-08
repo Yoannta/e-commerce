@@ -1,325 +1,660 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L'ÉCOLE DU E-COMMERCE | Vision & Excellence</title>
-    <meta name="description"
-        content="Centre de formation d'élite au e-commerce. Forgez votre avenir avec une approche cinématique et des résultats concrets.">
-    <!-- Fonts: Cinematic Signature (Fraunces + Manrope) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Manrope:wght@200..800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <!-- Smooth Scroll & Animation Libraries -->
-    <script src="https://unpkg.com/lenis@1.1.2/dist/lenis.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-</head>
-
-<body>
-    <header id="main-nav">
-        <div class="container">
-            <div class="logo">
-                <img src="logo.jpg" alt="Logo" class="logo-img">
-                L'Ecole du<span> E-commerce</span>
-            </div>
-            <nav>
+<!DOCTYPE html>
+
+<html lang="fr">
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>L'ÉCOLE DU E-COMMERCE | Vision & Excellence</title>
+
+    <meta name="description"
+
+        content="Centre de formation d'élite au e-commerce. Forgez votre avenir avec une approche cinématique et des résultats concrets.">
+
+    <!-- Fonts: Cinematic Signature (Fraunces + Manrope) -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Manrope:wght@200..800&display=swap"
+
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Smooth Scroll & Animation Libraries -->
+
+    <script src="https://unpkg.com/lenis@1.1.2/dist/lenis.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+</head>
+
+
+
+<body>
+
+    <header id="main-nav">
+
+        <div class="container">
+
+            <div class="logo">
+
+                <img src="logo.jpg" alt="Logo" class="logo-img">
+
+                L'Ecole du<span> E-commerce</span>
+
+            </div>
+
+            <nav>
+
                 <ul>
+
                     <li><a href="courses.html">Cours</a></li>
-                    <li><a href="dashboard.html">Dashboard</a></li>
+
+                    <li class="is-hidden" data-auth-visible="logged_in"><a href="dashboard.html">Mon espace</a></li>
+
                     <li><a href="#mentors">Impact</a></li>
+
                     <li><a href="#pricing">Tarifs</a></li>
-                    <li><a href="login.html" class="btn-secondary">Connexion</a></li>
-                    <li><a href="login.html" class="btn-primary">Inscription</a></li>
+
+                    <li><a href="login.html" class="btn-secondary" data-auth="login" data-auth-link>Connexion</a></li>
+
+                    <li><a href="register.html" class="btn-primary" data-auth="join" data-auth-link>Inscription</a></li>
+
+                    <li class="nav-avatar-wrap is-hidden" data-auth="avatar">
+                        <a href="dashboard.html" class="nav-avatar"><span data-auth="avatar-letter">A</span></a>
+                        <div class="nav-avatar-menu">
+                            <a href="dashboard.html">Dashboard</a>
+                            <a href="courses.html">Mes cours</a>
+                            <a href="#" data-action="logout">Déconnexion</a>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <main>
+
+        <section class="hero liquid-layer">
+
+            <!-- Nexus Gate Core -->
+
+            <div class="nexus-wrapper">
+
+                <div class="nexus-ring">
+
+                    <svg viewBox="0 0 400 400">
+
+                        <path id="nexus-path"
+
+                            d="M200,40 C110,40 40,110 40,200 C40,290 110,360 200,360 C290,360 360,290 360,200 C360,110 290,40 200,40 Z" />
+
+                    </svg>
+
+                    <div class="nexus-glow"></div>
+
+                </div>
+
+                <div class="fragments-container">
+
+                    <div class="fragment frag-1 glass-card" data-speed="0.8">
+
+                        <span class="icon">📈</span>
+
+                        <div class="frag-info"><span>Conversion</span><strong>+4.2%</strong></div>
+
+                    </div>
+
+                    <div class="fragment frag-2 glass-card" data-speed="1.2">
+
+                        <span class="icon">📦</span>
+
+                        <div class="frag-info"><span>Sourcing</span><strong>Chine → Afr.</strong></div>
+
+                    </div>
+
+                    <div class="fragment frag-3 glass-card" data-speed="1.5">
+
+                        <span class="icon">🎓</span>
+
+                        <div class="frag-info"><span>Apprenants</span><strong>50+</strong></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="container grid">
+
+                <div class="hero-content">
+
+                    <span class="badge">Elite Training 2026</span>
+
+                    <h1>Scale Your <span class="gradient-text">E-commerce</span> Vision to New Heights</h1>
+
+                    <p>Unlock the strategies used by 7-figure store owners. From product sourcing to high-conversion
+
+                        scaling, we provide the ultimate blueprint.</p>
+
+                    <div class="cta-group">
+
+                        <a href="login.html" class="btn-primary-large">Démarrer l'Ascension</a>
+
+                        <a href="courses.html" class="btn-outline">Explorer le Catalogue</a>
+
+                    </div>
+
+                    <div class="hero-stats">
+
+                        <div class="stat-item">
+
+                            <span class="stat-num">50+</span>
+
+                            <span class="stat-label">Apprenants</span>
+
+                        </div>
+
+                        <div class="stat-item">
+
+                            <span class="stat-num">2025</span>
+
+                            <span class="stat-label">Année de Fondation</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="hero-visual">
+
+                    <div class="glass-card main-card">
+
+                        <div class="card-header">
+
+                            <div class="card-dots"><span></span><span></span><span></span></div>
+
+                            <div class="card-title">Live Analytics</div>
+
+                        </div>
+
+                        <div class="chart-box">
+
+                            <!-- Visual placeholder for chart -->
+
+                            <div class="bar-chart">
+
+                                <div class="bar" style="height: 40%"></div>
+
+                                <div class="bar" style="height: 60%"></div>
+
+                                <div class="bar" style="height: 85%"></div>
+
+                                <div class="bar" style="height: 50%"></div>
+
+                                <div class="bar" style="height: 70%"></div>
+
+                                <div class="bar" style="height: 95%"></div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="card-footer">
+
+                            <span class="growth">+145% Revenue This Month</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="glass-card small-card top-right">
+
+                        <div class="mentor-badge">
+
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2dauto=format&fit=crop&w=100&q=80"
+
+                                alt="Mentor">
+
+                            <span>L. Bivert - Live Mentoring</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="glass-card small-card bottom-left">
+
+                        <div class="stat-mini">
+
+                            <span class="label">Conversion Rate</span>
+
+                            <span class="value">4.2%</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="hero-bg-glow"></div>
+
+        </section>
+
+
+
+        <section id="about" class="about section liquid-layer">
+
+            <div class="container grid">
+
+                <div class="about-image">
+
+                    <div class="glass-card founder-card">
+
+                        <img src="rodrigue-guedeu.jpg" alt="M. Rodrigue GUEDEU">
+
+                        <div class="founder-info">
+
+                            <h3>M. Rodrigue GUEDEU</h3>
+
+                            <p>Fondateur & Expert E-commerce</p>
+
+                            <span class="badge-mini">BAC +3 Marketing Digital</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="about-content">
+
+                    <span class="badge">Notre Histoire</span>
+
+                    <h2>À Propos de <span class="gradient-text">L'ÉCOLE DU E-COMMERCE</span></h2>
+
+                    <p>Fondée le <strong>18 octobre 2025</strong>, notre institution est dédiée aux métiers du business
+
+                        en ligne. Notre mission est claire : former, structurer et accompagner ceux qui souhaitent
+
+                        réussir de manière professionnelle, éthique et durable.</p>
+
+                    <p>Sous la direction de <strong>M. Rodrigue GUEDEU</strong>, fort de 5 années d'expérience terrain
+
+                        chez Nowooh, nous privilégions une approche pratique et concrète, orientée vers des résultats
+
+                        réels en Afrique.</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <section id="courses" class="courses section">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <h2>Maîtrisez chaque <span class="gradient-text">Compétence</span></h2>
+
+                    <p>Conçu pour chaque étape de votre parcours, du débutant à l'expert.</p>
+
+                </div>
+
+                <div class="course-grid">
+
+                    <div class="course-card">
+
+                        <div class="card-image bg-1"></div>
+
+                        <div class="card-body">
+
+                            <span class="tag">Fondation</span>
+
+                            <h3>Initiation au E-commerce</h3>
+
+                            <p>Comprenez les fondamentaux du business model en 2026. Gratuit et accessible à tous.</p>
+
+                            <div class="card-meta">
+
+                                <span>Module Gratuit</span>
+
+                                <a href="course-free.html" class="btn-outline"
+
+                                    style="padding: 0.5rem 1rem; border-radius: 8px;">Détails</a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="course-card featured">
+
+                        <div class="card-image bg-2"></div>
+
+                        <div class="card-body">
+
+                            <span class="tag">Scaling</span>
+
+                            <h3>Ecom Elite Foundations 2.0</h3>
+
+                            <p>Notre programme amiral pour bâtir un business stable et rentable en Afrique.</p>
+
+                            <div class="card-meta">
+
+                                <span>24 Modules</span>
+
+                                <a href="course-premium.html" class="btn-primary"
+
+                                    style="padding: 0.5rem 1rem; border-radius: 8px;">Voir l'offre</a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="course-card">
+
+                        <div class="card-image bg-3"></div>
+
+                        <div class="card-body">
+
+                            <span class="tag">Sourcing</span>
+
+                            <h3>Sourcing Mastery</h3>
+
+                            <p>Optimisez votre chaîne logistique et accédez à nos réseaux d'agents privés.</p>
+
+                            <div class="card-meta">
+
+                                <span>8 Modules</span>
+
+                                <a href="course-premium.html" class="btn-outline"
+
+                                    style="padding: 0.5rem 1rem; border-radius: 8px;">Détails</a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <section id="mentors" class="mentors section liquid-layer">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <h2>Notre <span class="gradient-text">Impact</span> depuis 2025</h2>
+
+                    <p>Plus de 50 apprenants formés et accompagnés. Plusieurs projets concrets lancés directement depuis
+
+                        l'Afrique.</p>
+
+                </div>
+
+                <div class="mentor-grid">
+
+                    <div class="mentor-card glass-card">
+
+                        <div class="impact-num gradient-text">50+</div>
+
+                        <h3>Apprenants Formés</h3>
+
+                        <p>Une communauté grandissante d'entrepreneurs digitaux.</p>
+
+                    </div>
+
+                    <div class="mentor-card glass-card">
+
+                        <div class="impact-num gradient-text">100%</div>
+
+                        <h3>Accompagnement</h3>
+
+                        <p>De la théorie à la mise en pratique réelle.</p>
+
+                    </div>
+
+                    <div class="mentor-card glass-card">
+
+                        <div class="impact-num gradient-text">Projets</div>
+
+                        <h3>Résultats Concrets</h3>
+
+                        <p>Des revenus générés en ligne grâce à nos méthodes.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <section id="pricing" class="pricing section liquid-layer">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <h2>Investissement <span class="gradient-text">Transparent</span></h2>
+
+                    <p>Choisissez le parcours qui correspond à votre ambition actuelle.</p>
+
+                </div>
+
+                <div class="pricing-grid">
+
+                    <div class="price-card glass-card">
+
+                        <div class="p-header">
+
+                            <h3>Pack Découverte</h3>
+
+                            <div class="price">Gratuit</div>
+
+                        </div>
+
+                        <ul class="p-features">
+
+                            <li>Accès Initiation 2026</li>
+
+                            <li>Webinaires Mensuels</li>
+
+                            <li>Accès Discord (Public)</li>
+
+                            <li class="disabled">Accompagnement Privé</li>
+
                 </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <section class="hero liquid-layer">
-            <!-- Nexus Gate Core -->
-            <div class="nexus-wrapper">
-                <div class="nexus-ring">
-                    <svg viewBox="0 0 400 400">
-                        <path id="nexus-path"
-                            d="M200,40 C110,40 40,110 40,200 C40,290 110,360 200,360 C290,360 360,290 360,200 C360,110 290,40 200,40 Z" />
-                    </svg>
-                    <div class="nexus-glow"></div>
-                </div>
-                <div class="fragments-container">
-                    <div class="fragment frag-1 glass-card" data-speed="0.8">
-                        <span class="icon">📈</span>
-                        <div class="frag-info"><span>Conversion</span><strong>+4.2%</strong></div>
-                    </div>
-                    <div class="fragment frag-2 glass-card" data-speed="1.2">
-                        <span class="icon">📦</span>
-                        <div class="frag-info"><span>Sourcing</span><strong>Chine → Afr.</strong></div>
-                    </div>
-                    <div class="fragment frag-3 glass-card" data-speed="1.5">
-                        <span class="icon">🎓</span>
-                        <div class="frag-info"><span>Apprenants</span><strong>50+</strong></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container grid">
-                <div class="hero-content">
-                    <span class="badge">Elite Training 2026</span>
-                    <h1>Scale Your <span class="gradient-text">E-commerce</span> Vision to New Heights</h1>
-                    <p>Unlock the strategies used by 7-figure store owners. From product sourcing to high-conversion
-                        scaling, we provide the ultimate blueprint.</p>
-                    <div class="cta-group">
-                        <a href="login.html" class="btn-primary-large">Démarrer l'Ascension</a>
-                        <a href="courses.html" class="btn-outline">Explorer le Catalogue</a>
-                    </div>
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <span class="stat-num">50+</span>
-                            <span class="stat-label">Apprenants</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-num">2025</span>
-                            <span class="stat-label">Année de Fondation</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="glass-card main-card">
-                        <div class="card-header">
-                            <div class="card-dots"><span></span><span></span><span></span></div>
-                            <div class="card-title">Live Analytics</div>
-                        </div>
-                        <div class="chart-box">
-                            <!-- Visual placeholder for chart -->
-                            <div class="bar-chart">
-                                <div class="bar" style="height: 40%"></div>
-                                <div class="bar" style="height: 60%"></div>
-                                <div class="bar" style="height: 85%"></div>
-                                <div class="bar" style="height: 50%"></div>
-                                <div class="bar" style="height: 70%"></div>
-                                <div class="bar" style="height: 95%"></div>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <span class="growth">+145% Revenue This Month</span>
-                        </div>
-                    </div>
-                    <div class="glass-card small-card top-right">
-                        <div class="mentor-badge">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80"
-                                alt="Mentor">
-                            <span>L. Bivert - Live Mentoring</span>
-                        </div>
-                    </div>
-                    <div class="glass-card small-card bottom-left">
-                        <div class="stat-mini">
-                            <span class="label">Conversion Rate</span>
-                            <span class="value">4.2%</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-bg-glow"></div>
-        </section>
-
-        <section id="about" class="about section liquid-layer">
-            <div class="container grid">
-                <div class="about-image">
-                    <div class="glass-card founder-card">
-                        <img src="rodrigue-guedeu.jpg" alt="M. Rodrigue GUEDEU">
-                        <div class="founder-info">
-                            <h3>M. Rodrigue GUEDEU</h3>
-                            <p>Fondateur & Expert E-commerce</p>
-                            <span class="badge-mini">BAC +3 Marketing Digital</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-content">
-                    <span class="badge">Notre Histoire</span>
-                    <h2>À Propos de <span class="gradient-text">L'ÉCOLE DU E-COMMERCE</span></h2>
-                    <p>Fondée le <strong>18 octobre 2025</strong>, notre institution est dédiée aux métiers du business
-                        en ligne. Notre mission est claire : former, structurer et accompagner ceux qui souhaitent
-                        réussir de manière professionnelle, éthique et durable.</p>
-                    <p>Sous la direction de <strong>M. Rodrigue GUEDEU</strong>, fort de 5 années d'expérience terrain
-                        chez Nowooh, nous privilégions une approche pratique et concrète, orientée vers des résultats
-                        réels en Afrique.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="courses" class="courses section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Maîtrisez chaque <span class="gradient-text">Compétence</span></h2>
-                    <p>Conçu pour chaque étape de votre parcours, du débutant à l'expert.</p>
-                </div>
-                <div class="course-grid">
-                    <div class="course-card">
-                        <div class="card-image bg-1"></div>
-                        <div class="card-body">
-                            <span class="tag">Fondation</span>
-                            <h3>Initiation au E-commerce</h3>
-                            <p>Comprenez les fondamentaux du business model en 2026. Gratuit et accessible à tous.</p>
-                            <div class="card-meta">
-                                <span>Module Gratuit</span>
-                                <a href="course-free.html" class="btn-outline"
-                                    style="padding: 0.5rem 1rem; border-radius: 8px;">Détails</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="course-card featured">
-                        <div class="card-image bg-2"></div>
-                        <div class="card-body">
-                            <span class="tag">Scaling</span>
-                            <h3>Ecom Elite Foundations 2.0</h3>
-                            <p>Notre programme amiral pour bâtir un business stable et rentable en Afrique.</p>
-                            <div class="card-meta">
-                                <span>24 Modules</span>
-                                <a href="course-premium.html" class="btn-primary"
-                                    style="padding: 0.5rem 1rem; border-radius: 8px;">Voir l'offre</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="course-card">
-                        <div class="card-image bg-3"></div>
-                        <div class="card-body">
-                            <span class="tag">Sourcing</span>
-                            <h3>Sourcing Mastery</h3>
-                            <p>Optimisez votre chaîne logistique et accédez à nos réseaux d'agents privés.</p>
-                            <div class="card-meta">
-                                <span>8 Modules</span>
-                                <a href="course-premium.html" class="btn-outline"
-                                    style="padding: 0.5rem 1rem; border-radius: 8px;">Détails</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="mentors" class="mentors section liquid-layer">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Notre <span class="gradient-text">Impact</span> depuis 2025</h2>
-                    <p>Plus de 50 apprenants formés et accompagnés. Plusieurs projets concrets lancés directement depuis
-                        l'Afrique.</p>
-                </div>
-                <div class="mentor-grid">
-                    <div class="mentor-card glass-card">
-                        <div class="impact-num gradient-text">50+</div>
-                        <h3>Apprenants Formés</h3>
-                        <p>Une communauté grandissante d'entrepreneurs digitaux.</p>
-                    </div>
-                    <div class="mentor-card glass-card">
-                        <div class="impact-num gradient-text">100%</div>
-                        <h3>Accompagnement</h3>
-                        <p>De la théorie à la mise en pratique réelle.</p>
-                    </div>
-                    <div class="mentor-card glass-card">
-                        <div class="impact-num gradient-text">Projets</div>
-                        <h3>Résultats Concrets</h3>
-                        <p>Des revenus générés en ligne grâce à nos méthodes.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="pricing" class="pricing section liquid-layer">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Investissement <span class="gradient-text">Transparent</span></h2>
-                    <p>Choisissez le parcours qui correspond à votre ambition actuelle.</p>
-                </div>
-                <div class="pricing-grid">
-                    <div class="price-card glass-card">
-                        <div class="p-header">
-                            <h3>Pack Découverte</h3>
-                            <div class="price">Gratuit</div>
-                        </div>
-                        <ul class="p-features">
-                            <li>Accès Initiation 2026</li>
-                            <li>Webinaires Mensuels</li>
-                            <li>Accès Discord (Public)</li>
-                            <li class="disabled">Accompagnement Privé</li>
-                        </ul>
-                        <a href="course-free.html" class="btn-outline full-width">Commencer</a>
-                    </div>
-                    <div class="price-card glass-card featured">
-                        <div class="p-header">
-                            <span class="p-badge">Recommandé</span>
-                            <h3>Programme Élite</h3>
-                            <div class="price">297.000 FCFA</div>
-                        </div>
-                        <ul class="p-features">
-                            <li>Accès Foundations 2.0</li>
-                            <li>Coaching Hebdo (Live)</li>
-                            <li>Réseau d'Agents Privés</li>
-                            <li>Templates & Scripts</li>
-                        </ul>
-                        <a href="course-premium.html" class="btn-primary-large full-width">Rejoindre l'Élite</a>
-                    </div>
-                    <div class="price-card glass-card">
-                        <div class="p-header">
-                            <h3>Mentorat VIP</h3>
-                            <div class="price">Sur Mesure</div>
-                        </div>
-                        <ul class="p-features">
-                            <li>Plan de Scaling Global</li>
-                            <li>Gestion de Stock</li>
-                            <li>Priorité 1-on-1</li>
-                            <li>Audit Tunnel de Vente</li>
-                        </ul>
-                        <a href="https://wa.me/237699000000?text=Bonjour,%20je%20souhaite%20des%20informations%20sur%20le%20Mentorat%20VIP."
-                            class="btn-outline full-width">Contacter Rodrigue</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container grid">
-            <div class="footer-brand">
-                <div class="logo">
-                    <img src="logo.jpg" alt="Logo" class="logo-img">
-                    L'Ecole du<span> E-commerce</span>
-                </div>
-                <p>Former la prochaine génération de leaders du e-commerce.</p>
-            </div>
-            <div class="footer-links">
-                <div class="link-group">
-                    <h4>Program</h4>
-                    <a href="courses.html">Cours</a>
-                    <a href="#mentors">Impact</a>
-                    <a href="#">Success Stories</a>
-                </div>
-                <div class="link-group">
-                    <h4>Resources</h4>
-                    <a href="#">Blog</a>
-                    <a href="#">Guide Gratuit</a>
-                    <a href="#">Newsletter</a>
-                </div>
-                <div class="link-group">
-                    <h4>Support</h4>
-                    <a href="#">FAQ</a>
-                    <a href="#">Contact</a>
-                    <a href="#">Mentions Légales</a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; 2026 L'Ecole du E-commerce. L'excellence au service de votre succès.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="main.js"></script>
-</body>
-
+
+                        <a href="course-free.html" class="btn-outline full-width">Commencer</a>
+
+                    </div>
+
+                    <div class="price-card glass-card featured">
+
+                        <div class="p-header">
+
+                            <span class="p-badge">Recommandé</span>
+
+                            <h3>Programme Élite</h3>
+
+                            <div class="price">297.000 FCFA</div>
+
+                        </div>
+
+                        <ul class="p-features">
+
+                            <li>Accès Foundations 2.0</li>
+
+                            <li>Coaching Hebdo (Live)</li>
+
+                            <li>Réseau d'Agents Privés</li>
+
+                            <li>Templates & Scripts</li>
+
+                </ul>
+
+                        <a href="course-premium.html" class="btn-primary-large full-width">Rejoindre l'Élite</a>
+
+                    </div>
+
+                    <div class="price-card glass-card">
+
+                        <div class="p-header">
+
+                            <h3>Mentorat VIP</h3>
+
+                            <div class="price">Sur Mesure</div>
+
+                        </div>
+
+                        <ul class="p-features">
+
+                            <li>Plan de Scaling Global</li>
+
+                            <li>Gestion de Stock</li>
+
+                            <li>Priorité 1-on-1</li>
+
+                            <li>Audit Tunnel de Vente</li>
+
+                </ul>
+
+                        <a href="https://wa.me/237699000000?text=Bonjour,%20je%20souhaite%20des%20informations%20sur%20le%20Mentorat%20VIP."
+
+                            class="btn-outline full-width">Contacter Rodrigue</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <footer class="footer">
+
+        <div class="container grid">
+
+            <div class="footer-brand">
+
+                <div class="logo">
+
+                    <img src="logo.jpg" alt="Logo" class="logo-img">
+
+                    L'Ecole du<span> E-commerce</span>
+
+                </div>
+
+                <p>Former la prochaine génération de leaders du e-commerce.</p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <div class="link-group">
+
+                    <h4>Program</h4>
+
+                    <a href="courses.html">Cours</a>
+
+                    <a href="#mentors">Impact</a>
+
+                    <a href="#">Success Stories</a>
+
+                </div>
+
+                <div class="link-group">
+
+                    <h4>Resources</h4>
+
+                    <a href="#">Blog</a>
+
+                    <a href="#">Guide Gratuit</a>
+
+                    <a href="#">Newsletter</a>
+
+                </div>
+
+                <div class="link-group">
+
+                    <h4>Support</h4>
+
+                    <a href="#">FAQ</a>
+
+                    <a href="#">Contact</a>
+
+                    <a href="#">Mentions Légales</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <div class="container">
+
+                <p>&copy; 2026 L'Ecole du E-commerce. L'excellence au service de votre succès.</p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <script src="auth.js"></script>
+
+    <script src="main.js"></script>
+
+</body>
+
+
+
 </html>

@@ -20,16 +20,17 @@
             justify-content: center;
             text-align: center;
             padding: 2rem;
-            background: radial-gradient(circle at 50% 50%, rgba(249, 115, 22, 0.08) 0%, transparent 80%);
+            background: #020617 radial-gradient(circle at 50% 50%, rgba(249, 115, 22, 0.08) 0%, transparent 80%);
         }
 
         .thankyou-card {
             max-width: 600px;
             padding: 4rem;
-            background: var(--glass);
+            background: rgba(15, 23, 42, 0.6);
             border: 1px solid var(--glass-border);
             border-radius: 40px;
-            backdrop-filter: blur(20px);
+            backdrop-filter: blur(25px);
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
         }
 
         .step-list {
@@ -80,18 +81,19 @@
 <body class="thankyou-page">
     <div class="thankyou-card">
         <span class="badge" style="margin-bottom: 1.5rem;">Action Requise</span>
-        <h1 style="font-family: 'Fraunces', serif;">Redirection vers <span class="gradient-text">WhatsApp</span>...</h1>
+        <h1 style="font-family: 'Fraunces', serif; font-size: 2.5rem;">Redirection vers <span
+                class="gradient-text">WhatsApp</span>...</h1>
         <p style="color: var(--text-muted); margin-top: 1rem;">Votre demande d'inscription est prête. Il ne vous reste
             qu'à l'envoyer.</p>
 
         <div class="step-list">
             <div class="step-item">
                 <div class="step-num">1</div>
-                <p>Cliquez sur "Envoyer" dans la discussion WhatsApp qui va s'ouvrir.</p>
+                <p>Cliquez sur "Envoyer" dans WhatsApp.</p>
             </div>
             <div class="step-item">
                 <div class="step-num">2</div>
-                <p>Complétez vos informations (Nom, Email) directement dans le message.</p>
+                <p>Complétez vos infos (Nom, Pays) dans le message.</p>
             </div>
             <div class="step-item">
                 <div class="step-num">3</div>
@@ -120,7 +122,7 @@
 
             document.getElementById('whatsapp-link').href = whatsappURL;
 
-            // Animate progress bar and redirect
+            // Redirect automation
             gsap.to("#progress", {
                 width: "100%",
                 duration: 3,
@@ -130,14 +132,10 @@
                 }
             });
 
-            gsap.from(".thankyou-card", {
-                scale: 0.95,
-                opacity: 0,
-                duration: 1,
-                ease: "power3.out"
-            });
+            gsap.from(".thankyou-card", { scale: 0.95, opacity: 0, duration: 1, ease: "power3.out" });
         });
     </script>
+    <script src="auth.js"></script>
 </body>
 
 </html>
