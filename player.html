@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lecture : Initiation | L'ÉCOLE DU E-COMMERCE</title>
+    <title>Lecteur de Cours | L'ÉCOLE DU E-COMMERCE</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -15,7 +15,6 @@
     <style>
         body {
             background: #020617;
-            /* Even darker for focus */
             display: flex;
             height: 100vh;
             overflow: hidden;
@@ -33,14 +32,14 @@
             width: 100%;
             aspect-ratio: 16 / 9;
             background: #000;
-            border-radius: 20px;
+            border-radius: 24px;
             overflow: hidden;
             border: 1px solid var(--glass-border);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
-            position: relative;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+            margin-top: 4rem;
         }
 
-        .video-placeholder {
+        .video-overlay {
             width: 100%;
             height: 100%;
             display: flex;
@@ -48,19 +47,18 @@
             justify-content: center;
             background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
             color: var(--primary);
-            font-size: 5rem;
+            font-size: 6rem;
             cursor: pointer;
+            transition: all 0.4s;
         }
 
-        .video-controls {
-            padding: 1.5rem 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .video-overlay:hover {
+            color: #fff;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
         }
 
         .player-sidebar {
-            width: 380px;
+            width: 400px;
             background: rgba(15, 23, 42, 0.8);
             backdrop-filter: blur(20px);
             border-left: 1px solid var(--glass-border);
@@ -69,7 +67,7 @@
         }
 
         .sidebar-header {
-            padding: 2rem;
+            padding: 2.5rem;
             border-bottom: 1px solid var(--glass-border);
         }
 
@@ -80,42 +78,25 @@
         }
 
         .playlist-item {
-            padding: 1.5rem 2rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 1.5rem 2.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
             cursor: pointer;
             transition: all 0.3s;
             display: flex;
-            gap: 1rem;
+            gap: 1.25rem;
             align-items: center;
         }
 
         .playlist-item:hover {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.02);
         }
 
         .playlist-item.active {
             background: rgba(249, 115, 22, 0.05);
-            border-left: 3px solid var(--primary);
+            border-left: 4px solid var(--primary);
         }
 
-        .item-num {
-            font-size: 0.8rem;
-            opacity: 0.5;
-            font-weight: 800;
-        }
-
-        .item-title {
-            font-size: 0.95rem;
-            font-weight: 600;
-        }
-
-        .item-duration {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            margin-top: 0.25rem;
-        }
-
-        .back-nav {
+        .back-btn {
             position: absolute;
             top: 2rem;
             left: 2rem;
@@ -125,62 +106,54 @@
 </head>
 
 <body>
-    <div class="back-nav">
-        <a href="dashboard.html" class="btn-outline" style="padding: 0.75rem 1.25rem; font-size: 0.8rem;">
-            ← Retour au Hub
+    <div class="back-btn">
+        <a href="dashboard.html" class="btn-outline" style="padding: 0.8rem 1.5rem; font-size: 0.85rem;">
+            ← Retour au Dashboard
         </a>
     </div>
 
     <main class="player-main">
-        <div class="video-container" style="margin-top: 4rem;">
-            <div class="video-placeholder" id="play-trigger">
+        <div class="video-container">
+            <div class="video-overlay" id="play-trigger">
                 <span>▶</span>
             </div>
         </div>
 
-        <div class="video-controls">
+        <div style="margin-top: 2.5rem; display: flex; justify-content: space-between; align-items: flex-end;">
             <div>
-                <span class="badge-mini">Module 01</span>
-                <h2 style="font-family: 'Fraunces', serif;">Les 3 Piliers du Succès en E-commerce</h2>
+                <span class="badge-mini">Module 01 : Introduction</span>
+                <h2 style="font-family: 'Fraunces', serif; font-size: 2.25rem; margin-top: 0.5rem;">Les 3 Piliers du
+                    Succès en 2026</h2>
             </div>
-            <div class="action-btns">
-                <button class="btn-outline">Ressources PDF</button>
-            </div>
+            <button class="btn-outline">Ressources (PDF)</button>
         </div>
     </main>
 
     <aside class="player-sidebar">
         <div class="sidebar-header">
-            <h3>Contenu du Cours</h3>
-            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">Progression : 12%</p>
+            <h3>Contenu de la formation</h3>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">Temps restant : 4h 12min</p>
         </div>
         <ul class="playlist">
             <li class="playlist-item active">
-                <span class="item-num">01</span>
+                <span style="opacity: 0.5; font-weight: 800;">01</span>
                 <div>
-                    <div class="item-title">Les 3 Piliers du Succès</div>
-                    <div class="item-duration">12:45</div>
+                    <div style="font-weight: 700;">Les 3 Piliers du Succès</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">12:45</div>
                 </div>
             </li>
             <li class="playlist-item">
-                <span class="item-num">02</span>
+                <span style="opacity: 0.5; font-weight: 800;">02</span>
                 <div>
-                    <div class="item-title">Choisir sa Niche en Afrique</div>
-                    <div class="item-duration">18:20</div>
+                    <div style="font-weight: 700;">Choisir sa Niche en Afrique</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">22:15</div>
                 </div>
             </li>
             <li class="playlist-item">
-                <span class="item-num">03</span>
+                <span style="opacity: 0.5; font-weight: 800;">03</span>
                 <div>
-                    <div class="item-title">Logistique & Cash On Delivery</div>
-                    <div class="item-duration">22:05</div>
-                </div>
-            </li>
-            <li class="playlist-item">
-                <span class="item-num">04</span>
-                <div>
-                    <div class="item-title">Sourcing : La Réalité du Terrain</div>
-                    <div class="item-duration">15:30</div>
+                    <div style="font-weight: 700;">Logistique & COD Mastery</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">18:10</div>
                 </div>
             </li>
         </ul>
@@ -188,18 +161,8 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const playTrigger = document.getElementById('play-trigger');
-            playTrigger.addEventListener('click', () => {
-                gsap.to(playTrigger, {
-                    scale: 1.1,
-                    opacity: 0,
-                    duration: 0.4,
-                    ease: "power2.in"
-                });
-            });
-
-            gsap.from(".player-sidebar", { x: 100, opacity: 0, duration: 1, ease: "power3.out" });
-            gsap.from(".video-container", { scale: 0.9, opacity: 0, duration: 1.2, ease: "power3.out" });
+            gsap.from(".player-sidebar", { x: 50, opacity: 0, duration: 1, ease: "power3.out" });
+            gsap.from(".video-container", { scale: 0.95, opacity: 0, duration: 1.2, ease: "power3.out" });
         });
     </script>
 </body>

@@ -37,12 +37,12 @@
 
         .auth-card {
             width: 100%;
-            max-width: 420px;
+            max-width: 440px;
             background: rgba(15, 23, 42, 0.6);
             backdrop-filter: blur(25px);
             border: 1px solid var(--glass-border);
             border-radius: 32px;
-            padding: 3rem;
+            padding: 3.5rem;
             position: relative;
             z-index: 10;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
@@ -50,28 +50,17 @@
 
         .auth-header {
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
         }
 
         .auth-logo {
             height: 48px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             border-radius: 8px;
         }
 
-        .auth-header h2 {
-            font-size: 2rem;
-            font-family: 'Fraunces', serif;
-            margin-bottom: 0.5rem;
-        }
-
-        .auth-header p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
         .form-group {
-            margin-bottom: 1.25rem;
+            margin-bottom: 1.5rem;
         }
 
         .form-group label {
@@ -80,8 +69,8 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             color: var(--text-muted);
-            margin-bottom: 0.5rem;
-            font-weight: 600;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
         }
 
         .form-group input {
@@ -89,9 +78,8 @@
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--glass-border);
             border-radius: 12px;
-            padding: 1rem;
+            padding: 1.25rem;
             color: #fff;
-            font-family: 'Manrope', sans-serif;
             transition: all 0.3s;
         }
 
@@ -99,28 +87,6 @@
             outline: none;
             border-color: var(--primary);
             background: rgba(255, 255, 255, 0.08);
-            box-shadow: 0 0 15px rgba(249, 115, 22, 0.1);
-        }
-
-        .auth-btn {
-            width: 100%;
-            margin-top: 1.5rem;
-            padding: 1.25rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        .auth-footer {
-            text-align: center;
-            margin-top: 2rem;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        .auth-footer a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
         }
     </style>
 </head>
@@ -130,51 +96,40 @@
 
     <div class="auth-card">
         <div class="auth-header">
-            <a href="index.html">
-                <img src="logo.jpg" alt="Logo" class="auth-logo">
-            </a>
-            <h2>Bienvenue <span class="gradient-text">Élite</span></h2>
-            <p>Accédez à votre espace de formation privé.</p>
+            <a href="index.html"><img src="logo.jpg" alt="Logo" class="auth-logo"></a>
+            <h2 style="font-family: 'Fraunces', serif; font-size: 2.25rem;">Bienvenue <span
+                    class="gradient-text">Élite</span></h2>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem;">Connectez-vous pour continuer
+                votre ascension.</p>
         </div>
 
         <form id="login-form">
             <div class="form-group">
-                <label for="email">Email Professionnel</label>
+                <label for="email">Email</label>
                 <input type="email" id="email" placeholder="nom@exemple.com" required>
             </div>
             <div class="form-group">
                 <label for="password">Mot de passe</label>
                 <input type="password" id="password" placeholder="••••••••" required>
             </div>
-
-            <button type="submit" class="btn-primary auth-btn">Démarrer l'Ascension</button>
+            <button type="submit" class="btn-primary"
+                style="width: 100%; padding: 1.25rem; font-weight: 800; letter-spacing: 1px; margin-top: 1rem;">
+                Démarrer l'Accension
+            </button>
         </form>
 
-        <div class="auth-footer">
-            Pas encore membre ? <a href="index.html#pricing">Voir les offres</a>
+        <div style="text-align: center; margin-top: 2.5rem; font-size: 0.9rem; color: var(--text-muted);">
+            Pas encore membre ? <a href="courses.html"
+                style="color: var(--primary); text-decoration: none; font-weight: 700;">Voir les cours</a>
         </div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            gsap.from(".auth-card", {
-                y: 30,
-                opacity: 0,
-                duration: 1.2,
-                ease: "power3.out"
-            });
-
-            const form = document.getElementById('login-form');
-            form.addEventListener('submit', (e) => {
+            gsap.from(".auth-card", { y: 20, opacity: 0, duration: 1.2, ease: "power3.out" });
+            document.getElementById('login-form').addEventListener('submit', (e) => {
                 e.preventDefault();
-                gsap.to(".auth-card", {
-                    scale: 0.95,
-                    opacity: 0,
-                    duration: 0.5,
-                    onComplete: () => {
-                        window.location.href = 'dashboard.html';
-                    }
-                });
+                window.location.href = 'dashboard.html';
             });
         });
     </script>
