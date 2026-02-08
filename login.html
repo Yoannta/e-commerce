@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion | L'ÉCOLE DU E-COMMERCE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Manrope:wght@200..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <style>
+        .auth-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-darker);
+            position: relative;
+            overflow: hidden;
+            padding: 2rem;
+        }
+
+        .auth-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(249, 115, 22, 0.1) 0%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        .auth-card {
+            width: 100%;
+            max-width: 420px;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(25px);
+            border: 1px solid var(--glass-border);
+            border-radius: 32px;
+            padding: 3rem;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .auth-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .auth-logo {
+            height: 48px;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .auth-header h2 {
+            font-size: 2rem;
+            font-family: 'Fraunces', serif;
+            margin-bottom: 0.5rem;
+        }
+
+        .auth-header p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 1rem;
+            color: #fff;
+            font-family: 'Manrope', sans-serif;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 15px rgba(249, 115, 22, 0.1);
+        }
+
+        .auth-btn {
+            width: 100%;
+            margin-top: 1.5rem;
+            padding: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .auth-footer {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .auth-footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body class="auth-page">
+    <div class="auth-glow"></div>
+
+    <div class="auth-card">
+        <div class="auth-header">
+            <a href="index.html">
+                <img src="logo.jpg" alt="Logo" class="auth-logo">
+            </a>
+            <h2>Bienvenue <span class="gradient-text">Élite</span></h2>
+            <p>Accédez à votre espace de formation privé.</p>
+        </div>
+
+        <form id="login-form">
+            <div class="form-group">
+                <label for="email">Email Professionnel</label>
+                <input type="email" id="email" placeholder="nom@exemple.com" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" placeholder="••••••••" required>
+            </div>
+
+            <button type="submit" class="btn-primary auth-btn">Démarrer l'Ascension</button>
+        </form>
+
+        <div class="auth-footer">
+            Pas encore membre ? <a href="index.html#pricing">Voir les offres</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.from(".auth-card", {
+                y: 30,
+                opacity: 0,
+                duration: 1.2,
+                ease: "power3.out"
+            });
+
+            const form = document.getElementById('login-form');
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                gsap.to(".auth-card", {
+                    scale: 0.95,
+                    opacity: 0,
+                    duration: 0.5,
+                    onComplete: () => {
+                        window.location.href = 'dashboard.html';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

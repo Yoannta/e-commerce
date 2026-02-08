@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | L'ÉCOLE DU E-COMMERCE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Manrope:wght@200..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <style>
+        :root {
+            --sidebar-width: 280px;
+        }
+
+        body {
+            background: var(--bg-darker);
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Navigation */
+        .dashboard-sidebar {
+            width: var(--sidebar-width);
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(20px);
+            border-right: 1px solid var(--glass-border);
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            height: 100vh;
+            z-index: 100;
+        }
+
+        .sidebar-logo {
+            margin-bottom: 3.5rem;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+            flex-grow: 1;
+        }
+
+        .sidebar-nav li {
+            margin-bottom: 0.75rem;
+        }
+
+        .sidebar-nav a {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            border-radius: 14px;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 500;
+        }
+
+        .sidebar-nav a:hover,
+        .sidebar-nav a.active {
+            background: rgba(249, 115, 22, 0.1);
+            color: var(--primary);
+            box-shadow: inset 0 0 10px rgba(249, 115, 22, 0.05);
+        }
+
+        /* Dashboard Content */
+        .dashboard-content {
+            margin-left: var(--sidebar-width);
+            flex-grow: 1;
+            padding: 3rem 4rem;
+            max-width: 1300px;
+        }
+
+        .dashboard-header {
+            margin-bottom: 3.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .course-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .course-item {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 28px;
+            padding: 2.5rem;
+            position: relative;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+
+        .course-item::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.05) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .course-item:hover {
+            transform: translateY(-8px);
+            border-color: rgba(249, 115, 22, 0.3);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.4);
+        }
+
+        .course-item:hover::before {
+            opacity: 1;
+        }
+
+        .course-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .course-title {
+            font-family: 'Fraunces', serif;
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .course-description {
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .course-action {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            border-color: #25D366;
+            color: #fff;
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            border-color: #128C7E;
+            color: #fff;
+        }
+
+        .price-tag {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .premium-border {
+            border: 2px solid rgba(249, 115, 22, 0.4);
+            background: linear-gradient(145deg, rgba(15, 23, 42, 0.8) 0%, rgba(15, 23, 42, 0.4) 100%);
+        }
+    </style>
+</head>
+
+<body>
+    <aside class="dashboard-sidebar">
+        <div class="sidebar-logo">
+            <a href="index.html">
+                <img src="logo.jpg" alt="Logo" style="height: 32px; border-radius: 4px;">
+            </a>
+        </div>
+        <nav>
+            <ul class="sidebar-nav">
+                <li><a href="#" class="active"><span>🏠</span> Catalogue</a></li>
+                <li><a href="#"><span>📚</span> Mes Cours</a></li>
+                <li><a href="#"><span>🎥</span> Coaching</a></li>
+                <li><a href="#"><span>💳</span> Facturation</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer" style="padding-top: 2rem; border-top: 1px solid var(--glass-border);">
+            <a href="index.html"
+                style="color: var(--text-muted); text-decoration: none; font-size: 0.85rem; display: flex; align-items: center; gap: 0.5rem;">
+                <span>🚪</span> Déconnexion
+            </a>
+        </div>
+    </aside>
+
+    <main class="dashboard-content">
+        <div class="dashboard-header">
+            <div>
+                <span class="badge-mini">Success Academy</span>
+                <h1 style="font-size: 2.5rem; margin-top: 0.5rem;">Choisissez votre <span
+                        class="gradient-text">Ascension</span></h1>
+            </div>
+            <div class="user-pill glass-card"
+                style="padding: 0.75rem 1.5rem; border-radius: 50px; display: flex; align-items: center; gap: 1rem;">
+                <div style="width: 32px; height: 32px; background: var(--gradient-1); border-radius: 50%;"></div>
+                <span style="font-weight: 600; font-size: 0.9rem;">Apprenant Élite</span>
+            </div>
+        </div>
+
+        <div class="course-showcase">
+            <!-- Course 1: Free Initiation -->
+            <div class="course-item">
+                <div>
+                    <span class="course-badge">Gratuit</span>
+                    <h2 class="course-title">Initiation au E-commerce</h2>
+                    <p class="course-description">Comprenez les fondamentaux du business model e-commerce en 2026. Idéal
+                        pour démarrer sans risque.</p>
+                </div>
+                <div class="course-action">
+                    <a href="player.html" class="btn-primary" style="padding: 1rem 2rem;">Lancer le cours</a>
+                </div>
+            </div>
+
+            <!-- Course 2: Premium Founders -->
+            <div class="course-item premium-border">
+                <div>
+                    <span class="course-badge" style="background: var(--primary); color: #fff;">Premium</span>
+                    <h2 class="course-title">Ecom Elite Foundations 2.0</h2>
+                    <p class="course-description">Notre programme amiral. Accès aux agents, stratégies de scaling
+                        publicitaire et coaching direct avec Rodrigue Guedeu.</p>
+                </div>
+                <div class="course-action" style="justify-content: space-between;">
+                    <div class="price-tag">297.000 FCFA</div>
+                    <a href="https://wa.me/237699000000?text=Bonjour,%20je%20souhaite%20m'inscrire%20au%20cours%20Ecom%20Elite%20Foundations."
+                        target="_blank" class="btn-primary whatsapp-btn" style="padding: 1rem 2rem;">
+                        <span>Finaliser sur WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.from(".dashboard-sidebar", { x: -50, opacity: 0, duration: 1, ease: "power3.out" });
+            gsap.from(".dashboard-content > *", {
+                y: 30,
+                opacity: 0,
+                duration: 1,
+                stagger: 0.2,
+                ease: "power3.out"
+            });
+        });
+    </script>
+</body>
+
+</html>

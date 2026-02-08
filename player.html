@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture : Initiation | L'ÉCOLE DU E-COMMERCE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Manrope:wght@200..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <style>
+        body {
+            background: #020617;
+            /* Even darker for focus */
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .player-main {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .video-container {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #000;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
+            color: var(--primary);
+            font-size: 5rem;
+            cursor: pointer;
+        }
+
+        .video-controls {
+            padding: 1.5rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-sidebar {
+            width: 380px;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
+            border-left: 1px solid var(--glass-border);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-header {
+            padding: 2rem;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .playlist {
+            list-style: none;
+            overflow-y: auto;
+            flex-grow: 1;
+        }
+
+        .playlist-item {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .playlist-item:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .playlist-item.active {
+            background: rgba(249, 115, 22, 0.05);
+            border-left: 3px solid var(--primary);
+        }
+
+        .item-num {
+            font-size: 0.8rem;
+            opacity: 0.5;
+            font-weight: 800;
+        }
+
+        .item-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .item-duration {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .back-nav {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            z-index: 100;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="back-nav">
+        <a href="dashboard.html" class="btn-outline" style="padding: 0.75rem 1.25rem; font-size: 0.8rem;">
+            ← Retour au Hub
+        </a>
+    </div>
+
+    <main class="player-main">
+        <div class="video-container" style="margin-top: 4rem;">
+            <div class="video-placeholder" id="play-trigger">
+                <span>▶</span>
+            </div>
+        </div>
+
+        <div class="video-controls">
+            <div>
+                <span class="badge-mini">Module 01</span>
+                <h2 style="font-family: 'Fraunces', serif;">Les 3 Piliers du Succès en E-commerce</h2>
+            </div>
+            <div class="action-btns">
+                <button class="btn-outline">Ressources PDF</button>
+            </div>
+        </div>
+    </main>
+
+    <aside class="player-sidebar">
+        <div class="sidebar-header">
+            <h3>Contenu du Cours</h3>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">Progression : 12%</p>
+        </div>
+        <ul class="playlist">
+            <li class="playlist-item active">
+                <span class="item-num">01</span>
+                <div>
+                    <div class="item-title">Les 3 Piliers du Succès</div>
+                    <div class="item-duration">12:45</div>
+                </div>
+            </li>
+            <li class="playlist-item">
+                <span class="item-num">02</span>
+                <div>
+                    <div class="item-title">Choisir sa Niche en Afrique</div>
+                    <div class="item-duration">18:20</div>
+                </div>
+            </li>
+            <li class="playlist-item">
+                <span class="item-num">03</span>
+                <div>
+                    <div class="item-title">Logistique & Cash On Delivery</div>
+                    <div class="item-duration">22:05</div>
+                </div>
+            </li>
+            <li class="playlist-item">
+                <span class="item-num">04</span>
+                <div>
+                    <div class="item-title">Sourcing : La Réalité du Terrain</div>
+                    <div class="item-duration">15:30</div>
+                </div>
+            </li>
+        </ul>
+    </aside>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const playTrigger = document.getElementById('play-trigger');
+            playTrigger.addEventListener('click', () => {
+                gsap.to(playTrigger, {
+                    scale: 1.1,
+                    opacity: 0,
+                    duration: 0.4,
+                    ease: "power2.in"
+                });
+            });
+
+            gsap.from(".player-sidebar", { x: 100, opacity: 0, duration: 1, ease: "power3.out" });
+            gsap.from(".video-container", { scale: 0.9, opacity: 0, duration: 1.2, ease: "power3.out" });
+        });
+    </script>
+</body>
+
+</html>
