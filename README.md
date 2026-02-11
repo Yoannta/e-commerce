@@ -1,43 +1,30 @@
-# 📝 Project Changelog - L'Ecole du E-commerce
+# L'ÉCOLE DU E-COMMERCE | Elite Training Prototype
 
-Ce fichier trace l'historique des modifications apportées au projet pour assurer la synchronisation entre les différentes IAs et développeurs.
+## 🌌 Vision & Excellence
 
-## 🕒 Historique des Mises à Jour
+Une plateforme d'apprentissage révolutionnaire conçue pour transformer les entrepreneurs africains en leaders du e-commerce mondial. Ce prototype utilise une esthétique cinématique "Elite" pour offrir une expérience immersive et prestigieuse.
 
-- **[Antigravity] 2026-02-06 14:11** :
-  - **Initialisation du Projet** : Création de la structure de base (HTML/CSS).
-  - **Design System** : Mise en place d'un thème "Elite" avec glassmorphism et animations de révélation au scroll.
-  - **Identité** : Nom de code initial "EcomMastery".
+## 🚀 Signatures Technologiques
 
-- **[Antigravity] 2026-02-06 14:19** :
-  - **Branding Officiel** : Remplacement de "EcomMastery" par "L'Ecole du E-commerce".
-  - **Palette de Couleurs** : Adoption du Orange (#f97316) et du Navy Blue (#0f172a).
-  - **Logo** : Intégration du logo officiel dans le header et le footer.
+- **Nexus Gate (Hero)** : Une interface morphing SVG avec fragments orbitaux.
+- **Bento Roadmap** : Un parcours de transformation modulaire inspiré des standards UX internationaux.
+- **Liquid Supply Chain** : Narration visuelle fluide du flux sourcing -> succès.
+- **Nexus Auth Portal** : Une expérience d'authentification cinématique "vivante", avec respiration Nexus et profondeur liquide.
 
-- **[Antigravity] 2026-02-06 22:38** :
-  - **Intégration Contenu Officiel** : Ajout de l'histoire (fondation le 18 octobre 2025), de la vision, de la mission et de l'impact (50+ apprenants).
-  - **Section Fondateur** : Création de la section dédiée à M. Rodrigue GUEDEU avec placeholders.
+## 🛠️ Stack Technique
 
-- **[Antigravity] 2026-02-06 22:50** :
-  - **Signature Visuelle Cinématique** : Migration du concept "Cinematic Signature" de *China Services Portal*.
-  - **Smooth Scroll** : Intégration de Lenis pour un défilement fluide.
-  - **Animations GSAP** : Ajout du "Liquid Depth Layers" (skew au scroll) et du parallaxe hero.
-  - **Luminescent Dock** : Transformation du menu en dock flottant (pill-shaped) interactif.
-  - **Typographie Prestige** : Switch vers Fraunces (Headings) et Manrope (Body).
+- **Animations** : GSAP (GreenSock) + ScrollTrigger
+- **Scroll Logic** : Lenis Smooth Scroll
+- **Styles** : Vanilla CSS (Glassmorphism, Fluid Typography)
+- **Structure** : HTML5 Sémantique
 
-- **[Antigravity] 2026-02-06 23:01** :
-  - **Finalisation Visuelle** : Intégration de la photo officielle de M. Rodrigue GUEDEU (`rodrigue-guedeu.jpg`).
-  - **Optimisation mobile** : Ajustement du dock et de la grille d'impact pour les écrans réduits.
-  - **Validation GitHub** : Synchronisation finale et déploiement live sur GitHub Pages.
+## 📂 Structure du Projet
+
+- `index.html` : Gateway principale (Landing cinématique).
+- `auth.html` : Portail d'authentification Elite.
+- `style.css` : Système de design centralisé (Cinematic Signature).
+- `main.js` : Moteur d'interactions et d'animations.
+- `designs_elite.md` : **Base de Données des Signatures "Elite"** (Guide pour les futurs collaborateurs).
 
 ---
-
-## 📊 Récapitulatif Technique (06/02/2026)
-
-**Signatures Implémentées** :
-1. **Liquid Depth** : Distorsion dynamique des sections au scroll.
-2. **Luminescent Dock** : Navigation flottante avec effet de halo orange au scroll.
-3. **Cinematic Vignette** : Overlay atmosphérique respirant.
-4. **Impact HUD** : Statistiques présentées via des cartes de verre parallaxes.
-
-**Statut** : Le site est 100% opérationnel, synchronisé avec le dépôt GitHub et reflète l'identité premium de L'Ecole du E-commerce.
+*Propulsé par la vision d'excellence de Rodrigue GUEDEU.*

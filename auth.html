@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S'inscrire | L'ÉCOLE DU E-COMMERCE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Manrope:wght@200..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <style>
+        .auth-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 100vh;
+        }
+
+        /* Side Info (Inspiration OC) */
+        .auth-side-info {
+            background: #0f172a;
+            /* Deep navy base */
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quantum-field {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            opacity: 0.6;
+        }
+
+        .quantum-field svg {
+            width: 150%;
+            height: 150%;
+            position: absolute;
+            top: -25%;
+            left: -25%;
+            filter: blur(40px);
+        }
+
+        .auth-fragments {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .auth-fragment {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 0.5rem;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .auth-side-info::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        /* Holographic Z-Layers */
+        .holographic-container {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            perspective: 1200px;
+        }
+
+        .holographic-layer {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            will-change: transform;
+        }
+
+        .layer-grid {
+            transform: translateZ(-300px);
+            opacity: 0.15;
+        }
+
+        .layer-particles {
+            transform: translateZ(-100px);
+        }
+
+        .layer-nexus {
+            transform: translateZ(100px);
+        }
+
+        .halo-ring {
+            position: absolute;
+            border: 1px dashed rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transform-origin: center;
+            backdrop-filter: url(#refraction-filter) blur(1px);
+        }
+
+        .side-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .side-content h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+        }
+
+        .side-content p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.25rem;
+            max-width: 500px;
+            margin-bottom: 3rem;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        /* Form Side */
+        .auth-side-form {
+            background: var(--bg-darker);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem;
+        }
+
+        .auth-card {
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .auth-logo {
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: 1.15rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .auth-logo img {
+            width: 40px;
+            border-radius: 50%;
+        }
+
+        .auth-logo span {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-style: normal;
+            color: var(--secondary);
+            letter-spacing: -0.01em;
+            font-size: 1.45rem;
+            text-transform: none;
+            position: relative;
+            padding-bottom: 2px;
+        }
+
+        .auth-logo span::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 25px;
+            height: 2px;
+            background: var(--gradient-1);
+            transition: width 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .auth-logo:hover span::after {
+            width: 100%;
+        }
+
+        .social-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn-social {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1rem;
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            background: var(--glass);
+            color: white;
+            font-family: var(--font-body);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-social:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+            border-color: var(--primary);
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--glass-border);
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 1rem 0;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0;
+            color: white;
+            font-family: var(--font-body);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-bottom-color: var(--primary);
+            box-shadow: 0 4px 12px -4px rgba(255, 110, 0, 0.2);
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .auth-footer {
+            margin-top: 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .auth-footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(0.95);
+                opacity: 0.8;
+            }
+        }
+
+        @media (max-width: 968px) {
+            .auth-container {
+                grid-template-columns: 1fr;
+            }
+
+            .auth-side-info {
+                display: none;
+            }
+        }
+
+        /* Liquid Layer depth */
+        .liquid-layer {
+            transition: transform 0.3s ease-out;
+            will-change: transform;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="auth-container">
+        <!-- Visual Side (Status Panel) -->
+        <div class="auth-side-info">
+            <!-- Nexus 10: Optical Engine -->
+            <svg style="position: absolute; width: 0; height: 0; pointer-events: none;">
+                <defs>
+                    <filter id="refraction-filter">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" result="noise" />
+                        <feDisplacementMap in="SourceGraphic" in2="noise" scale="12" xChannelSelector="R"
+                            yChannelSelector="G" />
+                    </filter>
+                    <filter id="chromatic-flash">
+                        <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0" result="col" />
+                        <feOffset in="col" dx="3" dy="0" result="red" />
+                        <feOffset in="col" dx="-3" dy="0" result="blue" />
+                        <feBlend in="red" in2="blue" mode="screen" />
+                    </filter>
+                </defs>
+            </svg>
+
+            <div class="holographic-container" id="holographic-main">
+                <!-- Layer 1: Data Grid -->
+                <div class="holographic-layer layer-grid">
+                    <div
+                        style="width: 200%; height: 200%; background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px); background-size: 60px 60px;">
+                    </div>
+                </div>
+
+                <!-- Layer 2: Magnetic Flux (Canvas) -->
+                <div class="holographic-layer layer-particles">
+                    <canvas id="particle-canvas"></canvas>
+                </div>
+
+                <!-- Layer 3: Nexus Presence -->
+                <div class="holographic-layer layer-nexus">
+                    <div class="quantum-field">
+                        <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+                            <path id="morph-path" fill="var(--primary)"
+                                d="M822,637Q711,774,547,820.5Q383,867,238,767Q93,667,117.5,500Q142,333,250.5,215Q359,97,522.5,142.5Q686,188,809.5,344Q933,500,822,637Z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="halo-system" id="halo-system"></div>
+                    <div class="nexus-ring-core" id="nexus-core">
+                        <svg viewBox="0 0 220 220">
+                            <circle cx="110" cy="110" r="100" fill="none" stroke="white" stroke-width="2"
+                                stroke-dasharray="8 20" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="auth-fragments">
+                <div class="auth-fragment" style="top: 20%; left: 10%;" data-speed="0.5">
+                    <span>📈</span> <strong>Scaling</strong>
+                </div>
+                <div class="auth-fragment" style="top: 60%; left: 20%;" data-speed="1.2">
+                    <span>📦</span> <strong>Sourcing</strong>
+                </div>
+                <div class="auth-fragment" style="top: 80%; left: 60%;" data-speed="0.8">
+                    <span>🎓</span> <strong>Elite</strong>
+                </div>
+            </div>
+            <div class="side-content">
+                <div class="status-badge">
+                    <div class="pulse-dot"></div>
+                    52 nouveaux membres aujourd'hui
+                </div>
+                <h2>Il n'est jamais trop tard pour transformer votre vision.</h2>
+                <p>Rejoignez le cercle d'élite des entrepreneurs e-commerce en Afrique.</p>
+
+                <div class="testimonials-mini">
+                    <div class="glass-card" style="padding: 1.5rem; border-radius: 12px; margin-bottom: 1rem;">
+                        <span style="font-weight: 800; display: block; margin-bottom: 0.5rem;">Preuve de Succès</span>
+                        "Le passage à l'étape Mastery a multiplié mon CA par 3 en 2 mois."
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Fragments (Abstract) -->
+            <div class="nexus-ring" style="opacity: 0.1; width: 400px; height: 400px; bottom: -50px; right: -50px;">
+                <svg viewBox="0 0 400 400">
+                    <path
+                        d="M200,40 C110,40 40,110 40,200 C40,290 110,360 200,360 C290,360 360,290 360,200 C360,110 290,40 200,40 Z"
+                        fill="none" stroke="white" stroke-width="2" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Form Side -->
+        <div class="auth-side-form">
+            <div class="auth-card">
+                <a href="index.html" class="auth-logo">
+                    <img src="logo.jpg" alt="Logo">
+                    L'Ecole du<span> E-commerce</span>
+                </a>
+
+                <h1 style="font-size: 2rem; margin-bottom: 2rem;">Prenez le contrôle</h1>
+
+                <div class="social-buttons">
+                    <button class="btn-social" onclick="simulateAuth('Google')">
+                        <svg width="20" height="20" viewBox="0 0 24 24">
+                            <path
+                                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                fill="#4285F4" />
+                            <path
+                                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                fill="#34A853" />
+                            <path
+                                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                fill="#FBBC05" />
+                            <path
+                                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                fill="#EA4335" />
+                        </svg>
+                        Continuer avec Google
+                    </button>
+                    <button class="btn-social" onclick="simulateAuth('Facebook')">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#1877F2">
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg>
+                        Continuer avec Facebook
+                    </button>
+                </div>
+
+                <div class="divider">ou utilisez votre email</div>
+
+                <form id="auth-form" onsubmit="event.preventDefault(); simulateAuth('Email');">
+                    <div class="input-group">
+                        <label>Adresse Mail</label>
+                        <input type="email" placeholder="nom@exemple.com" required>
+                    </div>
+                    <button type="submit" class="btn-primary"
+                        style="width: 100%; padding: 1rem; border-radius: 8px;">Démarrer l'ascension</button>
+                </form>
+
+                <div class="auth-footer">
+                    Vous avez déjà un compte ? <a href="#">Se connecter</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            // --- 0. Core Configuration ---
+            const particles = [];
+            const particleCount = 1200;
+            const canvas = document.getElementById('particle-canvas');
+            const ctx = canvas.getContext('2d');
+            let width, height;
+            let isFocused = false;
+            let magneticTarget = { x: 0, y: 0 };
+
+            // --- 0.1 Intro Cinematic Restoration ---
+            const tl = gsap.timeline();
+            tl.from(".auth-side-info", { xPercent: -100, duration: 1.2, ease: "power4.out" })
+                .from(".auth-side-form", { opacity: 0, x: 50, duration: 1 }, "-=0.8")
+                .from(".auth-logo, .auth-card h1, .social-buttons, .divider, .input-group, .btn-primary, .auth-footer", {
+                    opacity: 0,
+                    y: 30,
+                    stagger: 0.1,
+                    duration: 0.8,
+                    ease: "back.out(1.7)"
+                }, "-=0.5")
+                .from(".side-content > *", { opacity: 0, y: 20, stagger: 0.2, duration: 1 }, "-=1");
+
+            // --- 1. Resizing & Setup ---
+            function resize() {
+                width = canvas.width = canvas.parentElement.offsetWidth;
+                height = canvas.height = canvas.parentElement.offsetHeight;
+                magneticTarget = { x: width / 2, y: height / 2 };
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            // --- 2. Particle Class ---
+            class Particle {
+                constructor() {
+                    this.reset();
+                }
+
+                reset() {
+                    this.x = Math.random() * width;
+                    this.y = Math.random() * height;
+                    this.z = Math.random() * 2 + 0.5;
+                    this.vx = (Math.random() - 0.5) * 1.5;
+                    this.vy = (Math.random() - 0.5) * 1.5;
+                    this.radius = Math.random() * 1.2 + 0.5;
+                    this.color = `rgba(255, 255, 255, ${Math.random() * 0.3 + 0.1})`;
+                }
+
+                update() {
+                    // Magnetic Attraction
+                    if (isFocused) {
+                        const dx = magneticTarget.x - this.x;
+                        const dy = magneticTarget.y - this.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        const force = (500 - dist) / 5000;
+                        if (dist < 500) {
+                            this.vx += dx * force * 0.5;
+                            this.vy += dy * force * 0.5;
+                        }
+                    }
+
+                    this.x += this.vx;
+                    this.y += this.vy;
+
+                    // Slight Orbit around center
+                    const centerX = width / 2;
+                    const centerY = height / 2;
+                    const adx = centerX - this.x;
+                    const ady = centerY - this.y;
+                    this.vx += ady * 0.0001;
+                    this.vy -= adx * 0.0001;
+
+                    // Friction
+                    this.vx *= 0.98;
+                    this.vy *= 0.98;
+
+                    // Boundaries
+                    if (this.x < 0 || this.x > width || this.y < 0 || this.y > height) {
+                        this.reset();
+                    }
+                }
+
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius * this.z, 0, Math.PI * 2);
+                    ctx.fillStyle = this.color;
+                    ctx.fill();
+                }
+            }
+
+            for (let i = 0; i < particleCount; i++) particles.push(new Particle());
+
+            function animateParticles() {
+                ctx.clearRect(0, 0, width, height);
+                particles.forEach(p => {
+                    p.update();
+                    p.draw();
+                });
+                requestAnimationFrame(animateParticles);
+            }
+            animateParticles();
+
+            // --- 3. Interactive Hooks (Consensus: Master Concept) ---
+            const inputs = document.querySelectorAll('.input-group input');
+            inputs.forEach(input => {
+                input.addEventListener('focus', () => {
+                    isFocused = true;
+                    // Trigger Chromatic Flash
+                    gsap.to(".holographic-container", {
+                        filter: "url(#chromatic-flash)",
+                        duration: 0.1,
+                        onComplete: () => {
+                            gsap.to(".holographic-container", { filter: "none", duration: 0.2 });
+                        }
+                    });
+                    input.parentElement.classList.add('active');
+                });
+
+                input.addEventListener('blur', () => {
+                    isFocused = false;
+                    input.parentElement.classList.remove('active');
+                });
+
+                // Keystroke Pulse (Micro-implosion)
+                input.addEventListener('keydown', () => {
+                    particles.slice(0, 100).forEach(p => {
+                        p.vx += (Math.random() - 0.5) * 15;
+                        p.vy += (Math.random() - 0.5) * 15;
+                    });
+                });
+            });
+
+            // --- 4. Holographic Parallax + Liquid Skew Fusion ---
+            document.addEventListener('mousemove', (e) => {
+                const xPercent = (e.clientX / window.innerWidth) - 0.5;
+                const yPercent = (e.clientY / window.innerHeight) - 0.5;
+
+                // Holographic Parallax
+                gsap.to(".layer-grid", { x: xPercent * 20, y: yPercent * 20, duration: 1.5, ease: "power2.out" });
+                gsap.to(".layer-particles", { x: xPercent * 50, y: yPercent * 50, duration: 1.5, ease: "power2.out" });
+                gsap.to(".layer-nexus", { x: xPercent * 100, y: yPercent * 100, duration: 1.5, ease: "power2.out" });
+
+                // Liquid Skew Physics (Cased-based on mouse position)
+                const skewX = xPercent * 10;
+                const skewY = yPercent * 10;
+
+                gsap.to(".auth-card", {
+                    rotationY: xPercent * 8,
+                    rotationX: -yPercent * 8,
+                    skewX: skewX * 0.5,
+                    skewY: skewY * 0.5,
+                    duration: 0.8,
+                    ease: "power2.out"
+                });
+
+                gsap.to(".side-content", {
+                    x: xPercent * 30,
+                    y: yPercent * 30,
+                    skewX: -skewX * 0.2,
+                    duration: 1.2,
+                    ease: "power2.out"
+                });
+            });
+
+            // --- 5. Atmospheric Overlap (Phase 8.2 Migration) ---
+            const haloSystem = document.getElementById('halo-system');
+            const ringCount = 7;
+            const rings = [];
+            for (let i = 0; i < ringCount; i++) {
+                const ring = document.createElement('div');
+                ring.className = 'halo-ring';
+                const size = 300 + (i * 60);
+                ring.style.width = `${size}px`;
+                ring.style.height = `${size}px`;
+                ring.style.opacity = 0.05 + (0.05 * (1 - i / ringCount));
+                haloSystem.appendChild(ring);
+                rings.push(ring);
+                gsap.to(ring, { rotation: i % 2 === 0 ? 360 : -360, duration: 30 + (i * 10), repeat: -1, ease: "none" });
+            }
+
+            // Sync Multi-Ring Breathing
+            gsap.to(rings, { scale: 1.05, opacity: "+=0.03", duration: 4, repeat: -1, yoyo: true, ease: "sine.inOut", stagger: 0.1 });
+
+            // Nexus Core Rotation
+            gsap.to("#nexus-core", { rotation: 360, duration: 15, repeat: -1, ease: "none" });
+
+            // Nexus Path Morphing
+            const morphPath = document.getElementById('morph-path');
+            const paths = [
+                "M822,637Q711,774,547,820.5Q383,867,238,767Q93,667,117.5,500Q142,333,250.5,215Q359,97,522.5,142.5Q686,188,809.5,344Q933,500,822,637Z",
+                "M804,657.5Q699,815,537,824.5Q375,834,242.5,739Q110,644,115.5,502.5Q121,361,234.5,223Q348,85,510,137.5Q672,190,790.5,345Q909,500,804,657.5Z",
+                "M801,664Q695,828,531.5,833Q368,838,235.5,741Q103,644,124,505.5Q145,367,250.5,232.5Q356,98,499.5,160.5Q643,223,775,361.5Q907,500,801,664Z"
+            ];
+            let currentPath = 0;
+            function animateNexus() {
+                currentPath = (currentPath + 1) % paths.length;
+                gsap.to(morphPath, { duration: 4, attr: { d: paths[currentPath] }, ease: "sine.inOut", onComplete: animateNexus });
+            }
+            animateNexus();
+
+            // Success Transition
+            window.simulateAuth = function (provider) {
+                gsap.to(".auth-card", {
+                    scale: 0.8,
+                    filter: "url(#chromatic-flash) blur(10px)",
+                    opacity: 0,
+                    duration: 0.8,
+                    ease: "power4.in",
+                    onComplete: () => {
+                        window.location.href = "index.html#welcome";
+                    }
+                });
+            };
+        });
+    </script>
+</body>
+
+</html>
